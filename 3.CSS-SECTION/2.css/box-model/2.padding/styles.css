@@ -1,0 +1,16 @@
+.blog-post {
+  padding: 20px;
+  /* background-color: blue; */
+}
+/* Manual setting sides */
+.blog-post {
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+}
+
+/* Short hand */
+.blog-post {
+  padding: 10px 20px 30px 40px;
+}

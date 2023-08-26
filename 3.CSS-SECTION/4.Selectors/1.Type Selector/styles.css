@@ -1,0 +1,31 @@
+/* Styling for all h1 elements */
+h1{
+    color: #228b22;
+    text-align: center;
+    font-size: 60px;
+}
+/* Styling for all h2 elements */
+h2{
+    color: #6b8e23;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+}
+/* Styling for all h2 elements */
+p{
+    color: #556b2f;
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.5;
+}
+/* Styling for all ul elements */
+ul{
+    list-style: square;
+    margin-left: 20px;
+}
+
+/* Styling for all anchors elements */
+a{
+    color: blue;
+    text-decoration: none;
+}

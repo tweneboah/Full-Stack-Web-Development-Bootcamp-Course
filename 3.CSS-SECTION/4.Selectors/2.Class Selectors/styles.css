@@ -1,0 +1,41 @@
+.main-title{
+    color: blueviolet;
+    text-align: center;
+    font-size: 2.5em;
+}
+.tagline{
+    color: rgb(156, 77, 230);
+    text-align: center;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.featured-books{
+    background-color: rgb(224, 224, 75);
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+
+}
+
+.section-title{
+    color: rgb(152, 65, 233);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.book-title{
+    color: blue;
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+.contact{
+   background-color: #e6e6fa;
+   padding: 15px;
+   margin: 20px;
+   border-radius: 10px;
+}
+.contact-info{
+    color: blue;
+    font-size: 1.2em;
+}

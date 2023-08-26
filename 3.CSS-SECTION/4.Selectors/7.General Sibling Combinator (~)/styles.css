@@ -1,0 +1,43 @@
+body {
+  background-color: #f2f3f4;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#recipes {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.recipe {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #eaeded;
+}
+
+.recipe h2 {
+  font-size: 1.8em;
+  color: #21618c;
+  margin-bottom: 15px;
+}
+.ingredients {
+  background-color: #f5cba7;
+  padding: 10px;
+  border-radius: 5px;
+}
+.tips {
+  background-color: #f4ecf7;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* General (~) */
+.ingredients ~ .tips {
+  background-color: #efdeda;
+  font-style: italic;
+  border: 2px dashed #af7ac5;
+}

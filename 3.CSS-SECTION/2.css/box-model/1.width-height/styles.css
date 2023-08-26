@@ -1,0 +1,15 @@
+.sidebar {
+  width: 300px;
+  background-color: lightblue;
+}
+
+.banner {
+  height: 200px;
+  background-color: lightgreen;
+}
+
+.responsive-container {
+  width: 50%;
+  height: 50%;
+  background-color: lightcoral;
+}

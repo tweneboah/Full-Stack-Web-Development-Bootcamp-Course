@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Weather App</h1>
+      <p>
+        Enter a location below to get the current weather conditions for that
+        location.
+      </p>
+    </header>
+    <!-- main content -->
+    <main>
+      <!-- search box -->
+      <section class="search-box">
+        <input type="text" id="location-input" placeholder="Enter Location" />
+
+        <button id="search-button">Search</button>
+      </section>
+      <!-- errror /loading -->
+      <div id="loading" style="display: none">Loading...</div>
+      <div id="error" style="display: none">Error loading weather data</div>
+      <!-- weather content -->
+      <section
+        class="weather-display"
+        id="weather-display"
+        style="display: none"
+      >
+        <div class="temp-display"><span id="temperature">--</span> °C</div>
+        <div class="condition-display">
+          <span id="condition">--</span>
+        </div>
+
+        <!-- condition info -->
+        <div class="condition-info">
+          <span id="wind-speed">Wind Speed: --</span>
+          <span id="humidity">Humidity: --</span>
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer>
+      <p>Made by Masynctech Coding School</p>
+    </footer>
+    <!-- js goes here -->
+    <script src="script.js"></script>
+  </body>
+</html>

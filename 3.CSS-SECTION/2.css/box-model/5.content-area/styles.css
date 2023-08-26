@@ -1,0 +1,20 @@
+/* #content-box {
+  width: 300px;
+  height: 200px;
+  background-color: #b3d9ff;
+} */
+body {
+  background-color: #f6c3d0; /* This will represent the margin */
+}
+
+#content-box {
+  width: 300px;
+  height: 200px;
+  background-color: #b3d9ff; /* This represents the content area */
+  /* padding: 10px;
+  border: 5px solid #000; */
+  /* overflow: hidden; */
+  padding: 50px;
+  border: 5px solid #000;
+  box-sizing: content-box;
+}
