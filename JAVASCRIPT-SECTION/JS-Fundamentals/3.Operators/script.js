@@ -97,26 +97,85 @@ let base = 2;
 base **= 4;
 
 //! Comparison Operators: Used to compare values.
+//Equal to (== or ===)
+// Definition: The 'equal to' operator checks if the values of two operands are equal or not, regardless of their type.
 
-//Equal to (== / ===)
-//Definition: This operator checks if the values of two operands are equal or not.
+// Case Study: You have two different measurements of height, one from an input field (string) and the other from a calculated result (number). You need to know if they represent the same height.
 
-// Case study: You have two measurements of a wall, one from a string of "150" cm and the other from a laser measure of 150 cm. Are these two measurements equal in terms of their value?
+let heightA = "150"; //string
+let heightB = 150; //number
 
-let heightA = "150";
-let heightB = 150;
+// const result = heightA === heightB;
 
-// Not equal (!=)**
-// Case study: You have 5 apples and 7 oranges. Are the quantities of apples and oranges not equal?
+//  Not equal (!=)
+// Definition: The 'not equal' operator checks if the values of two operands are different, regardless of their type.
+
+// Case Study: You want to know if the number of apples you have is different from the number of oranges.
 
 let apples = 5;
 let oranges = 7;
 
-// console.log(apples != oranges);
+// const result = apples != oranges;
 
 // Not equal value or not equal type (!==)
-// Definition: This operator checks if the values and types of two operands are not equal.
+// Definition: The 'not equal value or not equal type' operator checks if the values and/or types of two operands are not identical.
 
-// Case study: Using the measurements from the first case study, are these two measurements strictly not equal, considering both their value and data type?
+// Case Study: Once again, you have two height measurements, but you want to know if they are not the same value and/or type.
 
-// console.log(heightA !== heightB);
+heightA !== heightB;
+
+// Greater than (>)
+// Case Study: You have two cars and you want to know if the first car is moving faster than the second car.
+
+let speedA = 60;
+let speedB = 50;
+
+// let result = speedA > speedB;
+// Greater than (>)
+speedA < speedB;
+
+// Greater than or equal to (>=)
+// Definition: The 'greater than or equal to' operator checks if the value of the left operand is greater than or equal to the value of the right operand.
+
+// Case Study: You're comparing the weight of two boxes and want to know if the first box weighs as much as or more than the second box.
+
+let weightA = 60;
+let weightB = 50;
+
+weightA <= weightB;
+
+//! Logical Operators:
+
+//Logical AND (&&)
+// Definition: The logical AND operator returns true if both operands are true. Otherwise, it returns false.
+
+// Case Study: You want to decide whether to go to the park based on two conditions: if it's sunny and warm outside.
+
+let isSunny = false;
+let isWarm = true;
+let shouldGoTopark = isSunny && isWarm;
+
+// Logical OR (||)
+// Definition: The logical OR operator returns true if either or both of the operands are true. It returns false only if both operands are false.
+
+// Case Study: You want to check if it's not raining so that you can go outside.
+
+let isRaining = false;
+let isSnowy = false;
+let isNight = true;
+const result = isRaining || isSnowy || isNight;
+
+//! String Operators (+)
+// Let's consider a case where you want to create a personalized greeting message by combining a fixed greeting string with a variable name string.
+
+let greeting = "Hello, ";
+let firstName = "Thomas";
+let lastName = "Tweneboah";
+let message = greeting + firstName + " " + lastName;
+
+//+=
+
+let sentence = "I love";
+sentence += " " + "Javascript";
+
+let value = "10" + 10;

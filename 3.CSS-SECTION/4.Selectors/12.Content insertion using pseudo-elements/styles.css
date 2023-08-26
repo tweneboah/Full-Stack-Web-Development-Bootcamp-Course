@@ -1,0 +1,72 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: #f7eee5;
+  margin: 0;
+  padding: 20px;
+}
+
+#recipe-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  color: #704214;
+  margin-bottom: 20px;
+}
+
+.image img {
+  border-radius: 8px;
+  margin-bottom: 20px;
+  height: 100px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.time-container {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.ingredients,
+.steps-container {
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #704214;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.note {
+  text-align: center;
+  background-color: #eaeaea;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Pseudo elements */
+.title::before {
+  content: "🥞";
+}
+
+.title::after {
+  content: "🥞";
+}
+
+.ingredients li::marker {
+  content: "🍽️";
+  margin-right: 5px;
+}
+
+.note::before {
+  content: "📝 ";
+  font-weight: bold;
+}

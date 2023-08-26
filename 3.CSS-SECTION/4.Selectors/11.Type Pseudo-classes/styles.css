@@ -1,0 +1,72 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: #e8e8e8;
+  line-height: 1.6;
+}
+
+#blog-post {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 42px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.author {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+p {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Logic */
+p:empty {
+  display: none;
+}
+
+p:not(.special),
+div:not(.special) {
+  color: #333;
+}
+:where(p, div).author {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.intro {
+  color: #444;
+  font-size: bold;
+}
+
+.tags {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.tags span {
+  background-color: rgb(2, 182, 122);
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}

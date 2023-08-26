@@ -1,0 +1,16 @@
+.profile-card {
+  border-width: 5px;
+  border-style: dotted;
+  border-color: #007bff;
+  width: 600px;
+}
+
+/* Customising individual border style */
+/* .profile-card {
+  border-top-width: 2px;
+  border-right-width: 4px;
+  border-bottom-width: 2px;
+  border-left-width: 4px;
+  border-style: dotted;
+  width: 600px;
+} */
