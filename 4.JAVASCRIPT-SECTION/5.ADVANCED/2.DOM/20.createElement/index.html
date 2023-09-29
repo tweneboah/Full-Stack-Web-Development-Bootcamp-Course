@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dynamic To-Do List</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        width: 300px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .task {
+        border: 2px solid #4caf50;
+        padding: 10px;
+        margin: 5px 0;
+        text-align: center;
+        background-color: #e8f5e9;
+        cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+      }
+      .task:hover {
+        background-color: #c8e6c9;
+        border-color: #388e3c;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h2>Dynamic To-Do</h2>
+      <!-- Tasks will be appended here -->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
