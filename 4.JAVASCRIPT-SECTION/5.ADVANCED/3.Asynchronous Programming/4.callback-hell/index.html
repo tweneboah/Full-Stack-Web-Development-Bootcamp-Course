@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback hell</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #f7f9fc;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #4a90e2;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .container {
+        max-width: 850px;
+        margin: 40px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px 40px;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: #4a90e2;
+        font-size: 26px;
+        margin-top: 40px;
+      }
+
+      p {
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      pre {
+        background-color: #f5f5f5;
+        padding: 15px;
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-size: 16px;
+        margin-top: 15px;
+      }
+
+      code {
+        font-family: "Roboto Mono", monospace;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Callback Functions in JavaScript</h1>
+    </header>
+
+    <div class="container">
+      <h2>Callback Hell Example</h2>
+      <p>
+        In this example, we'll simulate a callback hell scenario by nesting
+        multiple asynchronous functions that require callbacks.
+      </p>
+      <pre>
+<code>
+function step1(callback) {
+    setTimeout(function () {
+        console.log("Step 1 completed");
+        callback();
+    }, 1000);
+}
+
+function step2(callback) {
+    setTimeout(function () {
+        console.log("Step 2 completed");
+        callback();
+    }, 1000);
+}
+
+function step3(callback) {
+    setTimeout(function () {
+        console.log("Step 3 completed");
+        callback();
+    }, 1000);
+}
+
+function finalStep() {
+    console.log("All steps completed!");
+}
+
+step1(function () {
+    step2(function () {
+        step3(function () {
+            finalStep();
+        });
+    });
+});
+</code>
+</pre>
+      <p>
+        In this example, we have three asynchronous steps, each with a callback.
+        The code demonstrates a scenario where you're forced to nest callbacks,
+        resulting in a less readable and maintainable code structure, commonly
+        referred to as "callback hell."
+      </p>
+      <p>
+        It's essential to avoid such nested callback structures when working on
+        real projects. Modern JavaScript provides alternatives like Promises and
+        async/await to improve code readability and maintainability.
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

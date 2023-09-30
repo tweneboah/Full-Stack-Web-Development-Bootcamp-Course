@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blocking vs Non-blocking Code in JavaScript</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #f7f9fc;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #4a90e2;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .container {
+        max-width: 850px;
+        margin: 40px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px 40px;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: #4a90e2;
+        font-size: 26px;
+        margin-top: 40px;
+      }
+
+      p {
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      pre {
+        background-color: #f5f5f5;
+        padding: 15px;
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-size: 16px;
+        margin-top: 15px;
+      }
+
+      code {
+        font-family: "Roboto Mono", monospace;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Blocking vs Non-blocking Code in JavaScript</h1>
+    </header>
+
+    <div class="container">
+      <h2>Blocking Code</h2>
+      <p>
+        In JavaScript, blocking code is code that can halt the execution of
+        other code until it's completed. When a block of code is being executed,
+        it prevents the execution of any subsequent code until it's finished.
+        This can lead to slow and unresponsive applications, especially when
+        dealing with time-consuming operations.
+      </p>
+      <p>
+        Here's an example of blocking code that simulates a time-consuming
+        operation:
+      </p>
+      <pre>
+<code>
+function blockingOperation() {
+    for (let i = 0; i < 1000000000; i++) {
+        // Simulate a time-consuming task
+    }
+}
+
+blockingOperation();
+console.log("This message will be logged after the blocking operation.");
+</code>
+        </pre>
+
+      <h2>Non-blocking Code</h2>
+      <p>
+        Non-blocking code, on the other hand, allows other code to continue
+        executing while certain tasks are being performed asynchronously. It
+        doesn't halt the execution of subsequent code. This is particularly
+        important in web development, where you want to keep the user interface
+        responsive.
+      </p>
+      <p>
+        Here's an example of non-blocking code using the setTimeout function:
+      </p>
+      <pre>
+<code>
+function nonBlockingOperation() {
+    setTimeout(function() {
+        console.log("This message is logged after a delay.");
+    }, 2000);
+}
+
+nonBlockingOperation();
+console.log("This message will be logged immediately.");
+</code>
+        </pre>
+
+      <h2>Conclusion</h2>
+      <p>
+        Understanding the difference between blocking and non-blocking code is
+        crucial for writing efficient and responsive JavaScript applications.
+        Non-blocking code allows you to perform tasks asynchronously, ensuring
+        that your application remains responsive to user interactions.
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
