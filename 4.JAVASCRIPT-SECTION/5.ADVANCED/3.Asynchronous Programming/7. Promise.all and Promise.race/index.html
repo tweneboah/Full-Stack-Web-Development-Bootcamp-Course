@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise.all() and Promise.race() in JavaScript</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #f7f9fc;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #4a90e2;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .container {
+        max-width: 850px;
+        margin: 40px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px 40px;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: #4a90e2;
+        font-size: 26px;
+        margin-top: 40px;
+      }
+
+      p {
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      pre {
+        background-color: #f5f5f5;
+        padding: 15px;
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-size: 16px;
+        margin-top: 15px;
+      }
+
+      code {
+        font-family: "Roboto Mono", monospace;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Promise.all() and Promise.race() in JavaScript</h1>
+    </header>
+
+    <div class="container">
+      <h2>Promise.all()</h2>
+      <p>
+        <code>Promise.all()</code> is used when you have multiple promises and
+        you want them all to complete before doing something. It takes an array
+        of promises and returns a new promise that resolves when all of the
+        input promises have resolved.
+      </p>
+      <pre>
+<code>
+const promise1 = Promise.resolve(3);
+const promise2 = new Promise((resolve, reject) => setTimeout(resolve, 100, 'foo'));
+const promise3 = 42;
+
+Promise.all([promise1, promise2, promise3])
+    .then(values => {
+        console.log(values);  // expected output: [3, 'foo', 42]
+    });
+</code>
+        </pre>
+      <p>
+        If any of the promises reject, the promise returned by
+        <code>Promise.all()</code> immediately rejects with the reason of the
+        first promise that rejected, disregarding the resolve status of the
+        other promises.
+      </p>
+
+      <h2>Promise.race()</h2>
+      <p>
+        <code>Promise.race()</code> is used when you have multiple promises and
+        you are interested in the one that finishes first (either resolves or
+        rejects). It returns a promise that fulfills or rejects as soon as one
+        of the promises in the iterable fulfills or rejects, with the value or
+        reason from that promise.
+      </p>
+      <pre>
+<code>
+const promiseA = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('A wins!'), 100);
+});
+const promiseB = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('B wins!'), 50);
+});
+
+Promise.race([promiseA, promiseB])
+    .then(value => {
+        console.log(value);  // expected output: "B wins!"
+    });
+</code>
+        </pre>
+
+      <h2>Conclusion</h2>
+      <p>
+        <code>Promise.all()</code> and <code>Promise.race()</code> are powerful
+        utilities provided by the JavaScript language to handle multiple
+        promises simultaneously. They offer a neat way to handle concurrency in
+        asynchronous operations, ensuring that developers can control and
+        dictate the flow of asynchronous code.
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

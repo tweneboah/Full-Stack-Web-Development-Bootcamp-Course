@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding Promises in JavaScript</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #f7f9fc;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #4a90e2;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .container {
+        max-width: 850px;
+        margin: 40px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px 40px;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: #4a90e2;
+        font-size: 26px;
+        margin-top: 40px;
+      }
+
+      p {
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      pre {
+        background-color: #f5f5f5;
+        padding: 15px;
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-size: 16px;
+        margin-top: 15px;
+      }
+
+      code {
+        font-family: "Roboto Mono", monospace;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Understanding Promises in JavaScript</h1>
+    </header>
+
+    <div class="container">
+      <h2>What is a Promise?</h2>
+      <p>
+        A Promise in JavaScript is an object representing the eventual
+        completion or failure of an asynchronous operation. Essentially, a
+        promise is a returned object to which you attach callbacks, instead of
+        passing callbacks into a function.
+      </p>
+
+      <h2>Creating a Promise</h2>
+      <p>You can create a new promise using the `Promise` constructor:</p>
+      <pre>
+<code>
+const promise = new Promise((resolve, reject) => {
+    // Do some asynchronous task
+    setTimeout(() => {
+        resolve('Data retrieved successfully!');
+        // or
+        // reject('Error retrieving data');
+    }, 2000);
+});
+</code>
+        </pre>
+
+      <h2>Using a Promise</h2>
+      <p>
+        Once a promise has been created, you can use the `.then()` method to
+        handle a successful case or the `.catch()` method to handle an error:
+      </p>
+      <pre>
+<code>
+promise
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+</code>
+        </pre>
+
+      <h2>Chaining Promises</h2>
+      <p>
+        One of the powerful features of promises is the ability to chain them
+        together. This allows for sequential asynchronous operations:
+      </p>
+      <pre>
+<code>
+function fetchData() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('First set of data');
+        }, 2000);
+    });
+}
+
+function fetchMoreData(data) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(data + ' and second set of data');
+        }, 2000);
+    });
+}
+
+fetchData()
+    .then(fetchMoreData)
+    .then(console.log);
+// Expected Output (after 4 seconds):
+// First set of data and second set of data
+</code>
+        </pre>
+
+      <h2>Conclusion</h2>
+      <p>
+        Promises provide a more powerful, flexible, and composable way to work
+        with asynchronous operations in JavaScript. They offer a cleaner
+        alternative to callbacks and are the foundation for the modern
+        async/await syntax.
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

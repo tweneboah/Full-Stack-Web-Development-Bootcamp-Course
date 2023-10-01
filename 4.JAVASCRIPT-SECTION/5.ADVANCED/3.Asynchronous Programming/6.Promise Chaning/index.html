@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise Chaining in JavaScript</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #f7f9fc;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #4a90e2;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .container {
+        max-width: 850px;
+        margin: 40px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px 40px;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: #4a90e2;
+        font-size: 26px;
+        margin-top: 40px;
+      }
+
+      p {
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      pre {
+        background-color: #f5f5f5;
+        padding: 15px;
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-size: 16px;
+        margin-top: 15px;
+      }
+
+      code {
+        font-family: "Roboto Mono", monospace;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Promise Chaining in JavaScript</h1>
+    </header>
+
+    <div class="container">
+      <h2>Introduction to Promise Chaining</h2>
+      <p>
+        Promise chaining allows you to execute multiple asynchronous operations
+        sequentially. When one promise resolves, its result can be passed on to
+        the next promise in the chain, allowing for a sequence of asynchronous
+        tasks to be performed one after the other.
+      </p>
+
+      <h2>Basic Chaining</h2>
+      <p>
+        Each call to `.then()` or `.catch()` actually creates and returns a new
+        promise, which resolves when the given handler function completes. This
+        means you can chain additional `.then()` or `.catch()` calls onto it:
+      </p>
+      <pre>
+<code>
+new Promise((resolve, reject) => {
+    setTimeout(() => resolve(1), 1000);
+})
+.then(result => {
+    console.log(result); // 1
+    return result * 2;
+})
+.then(result => {
+    console.log(result); // 2
+    return result * 2;
+})
+.then(result => {
+    console.log(result); // 4
+});
+</code>
+        </pre>
+
+      <h2>Error Handling in Chaining</h2>
+      <p>
+        If any promise in the chain rejects, the subsequent promises' handlers
+        will be skipped until a `.catch()` is encountered:
+      </p>
+      <pre>
+<code>
+new Promise((resolve, reject) => {
+    setTimeout(() => reject(new Error("Whoops!")), 1000);
+})
+.then(() => 2)
+.then(() => 3)
+.catch(error => console.error(error.message)); // Whoops!
+</code>
+        </pre>
+
+      <h2>Returning Promises</h2>
+      <p>
+        In a chain, you can also return another promise, and the chain will wait
+        for that promise to settle:
+      </p>
+      <pre>
+<code>
+new Promise((resolve) => {
+    setTimeout(() => resolve(1), 1000);
+})
+.then(result => {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(result * 2), 1000);
+    });
+})
+.then(result => {
+    console.log(result); // 2
+    return result * 3;
+})
+.then(result => {
+    console.log(result); // 6
+});
+</code>
+        </pre>
+
+      <h2>Conclusion</h2>
+      <p>
+        Promise chaining provides a powerful mechanism to handle asynchronous
+        operations in a sequential and organized manner. It allows for better
+        error handling and improved code readability over nested callbacks. With
+        modern JavaScript, async/await further simplifies asynchronous code
+        based on promises, making it even more concise and readable.
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
