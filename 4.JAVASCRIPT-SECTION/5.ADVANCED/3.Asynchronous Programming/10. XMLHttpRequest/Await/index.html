@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Making HTTP Requests with XMLHttpRequest</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #f7f9fc;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #4caf50;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .container {
+        max-width: 850px;
+        margin: 40px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px 40px;
+      }
+
+      h1,
+      h2 {
+        font-weight: 600;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: #4caf50;
+        font-size: 26px;
+        margin-top: 40px;
+      }
+
+      p {
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      pre {
+        background-color: #f5f5f5;
+        padding: 15px;
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-size: 16px;
+        margin-top: 15px;
+      }
+
+      code {
+        font-family: "Roboto Mono", monospace;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Making HTTP Requests with XMLHttpRequest</h1>
+    </header>
+
+    <div class="container">
+      <h2>Introduction</h2>
+      <p>
+        XMLHttpRequest is a browser-based API that can be used to send HTTP
+        requests and receive HTTP responses. It plays a crucial role in AJAX
+        programming and allows for asynchronous communication between a client
+        and a server.
+      </p>
+
+      <h2>Creating an XMLHttpRequest Object</h2>
+      <p>
+        The first step in using the XMLHttpRequest API is to create a new
+        instance of the object.
+      </p>
+      <pre>
+<code>
+const xhr = new XMLHttpRequest();
+</code>
+        </pre>
+
+      <h2>Initializing a Request</h2>
+      <p>
+        To make an HTTP request, you'll need to initialize it using the
+        <code>open()</code> method.
+      </p>
+      <pre>
+<code>
+xhr.open('GET', 'https://api.example.com/data', true);
+</code>
+        </pre>
+
+      <h2>Sending the Request</h2>
+      <p>
+        Once the request has been initialized, the <code>send()</code> method is
+        used to send it.
+      </p>
+      <pre>
+<code>
+xhr.send();
+</code>
+        </pre>
+
+      <h2>Handling Responses</h2>
+      <p>
+        You can use the <code>onload</code> and <code>onerror</code> events to
+        handle successful and failed requests, respectively.
+      </p>
+      <pre>
+<code>
+xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+        console.log('Success:', xhr.responseText);
+    } else {
+        console.log('Failed:', xhr.status);
+    }
+};
+
+xhr.onerror = function() {
+    console.log('Request error...');
+};
+</code>
+        </pre>
+
+      <h2>Complete Example</h2>
+      <pre>
+<code>
+const xhr = new XMLHttpRequest();
+
+xhr.open('GET', 'https://api.example.com/data', true);
+
+xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+        console.log('Success:', xhr.responseText);
+    } else {
+        console.log('Failed:', xhr.status);
+    }
+};
+
+xhr.onerror = function() {
+    console.log('Request error...');
+};
+
+xhr.send();
+</code>
+        </pre>
+
+      <h2>Conclusion</h2>
+      <p>
+        XMLHttpRequest is a powerful tool for making HTTP requests and working
+        with AJAX. While newer technologies like Fetch and Axios are now
+        available, understanding XMLHttpRequest is essential for grasping the
+        underlying mechanics of client-server communication.
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Making HTTP Requests with Axios</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"
+      integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .container {
+        max-width: 850px;
+        margin: 30px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+
+      h1,
+      h2 {
+        font-weight: 600;
+      }
+
+      h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: #4caf50;
+        font-size: 24px;
+        margin-top: 30px;
+      }
+
+      p {
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      pre {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 15px;
+        overflow-x: auto;
+      }
+
+      code {
+        font-family: "Roboto Mono", monospace;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Making HTTP Requests with Axios</h1>
+    </header>
+
+    <div class="container">
+      <h2>Introduction</h2>
+      <p>
+        Axios is a promise-based HTTP client for JavaScript that can be used in
+        both the browser and Node.js environments. It has a straightforward API
+        and can handle requests and responses in JSON format, making it ideal
+        for use with modern web applications.
+      </p>
+
+      <h2>Installing Axios</h2>
+      <p>
+        You can include Axios in your project by using npm or by including a CDN
+        link in your HTML file.
+      </p>
+      <pre>
+<code>
+// Using npm
+npm install axios
+
+// Using CDN
+&lt;script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"&gt;&lt;/script&gt;
+</code>
+        </pre>
+
+      <h2>Basic GET Request</h2>
+      <p>A basic GET request using Axios is simple to implement:</p>
+      <pre>
+<code>
+axios.get('https://api.example.com/items')
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.log('Error fetching data:', error);
+  });
+</code>
+        </pre>
+
+      <h2>Using async/await</h2>
+      <p>Axios works seamlessly with async/await:</p>
+      <pre>
+<code>
+async function fetchData() {
+  try {
+    const response = await axios.get('https://api.example.com/items');
+    console.log(response.data);
+  } catch (error) {
+    console.log('Error fetching data:', error);
+  }
+}
+fetchData();
+</code>
+        </pre>
+
+      <h2>POST Request</h2>
+      <p>To perform a POST request, you can do the following:</p>
+      <pre>
+<code>
+axios.post('https://api.example.com/items', {
+  name: 'New Item',
+  description: 'New Item Description'
+})
+.then(response => {
+  console.log('Data has been sent:', response);
+})
+.catch(error => {
+  console.log('Error sending data:', error);
+});
+</code>
+        </pre>
+
+      <h2>Conclusion</h2>
+      <p>
+        Axios provides a clean and easy-to-understand API for making HTTP
+        requests. It also integrates well with modern JavaScript features like
+        promises and async/await, making it a great choice for your HTTP needs.
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

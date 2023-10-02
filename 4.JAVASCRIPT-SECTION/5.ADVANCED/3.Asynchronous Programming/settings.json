@@ -1,0 +1,37 @@
+{
+  "window.zoomLevel": 5,
+  "workbench.colorTheme": "Night Owl (No Italics)",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "entity.name.tag.html",
+        "settings": {
+          "foreground": "#c1254f"
+        }
+      },
+      {
+        "scope": "comment",
+        "settings": {
+          "foreground": "#08be51"
+        }
+      },
+      {
+        "scope": "comment.line.double-slash",
+        "settings": {
+          "foreground": "#08be51"
+        }
+      }
+    ]
+  },
+  "editor.wordWrap": "bounded",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+  "workbench.statusBar.visible": false,
+  "workbench.iconTheme": "vscode-icons",
+  "editor.formatOnSave": true,
+  "json.schemas": [],
+  "vsicons.dontShowNewVersionMessage": true,
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false
+}
