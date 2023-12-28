@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+}
+
+.section {
+  padding: 2em;
+  text-align: center;
+}
+
+.section:nth-child(even) {
+  background-color: #e2e2e2;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+}
+
+.team-member {
+  margin: 1em;
+}
+
+.contact {
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
+}

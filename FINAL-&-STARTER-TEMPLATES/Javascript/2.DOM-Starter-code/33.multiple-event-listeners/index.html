@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Multiple Event Listeners Example</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      #actionButton {
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+      #actionButton:hover {
+        background-color: #45a049;
+        transform: scale(1.1);
+      }
+      #actionButton:active {
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <button id="actionButton">Click Me!</button>
+    <script src="script.js"></script>
+  </body>
+</html>

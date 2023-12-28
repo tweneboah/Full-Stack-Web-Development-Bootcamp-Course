@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sorted Student List</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #eef2f7;
+        margin: 0;
+        padding: 0;
+      }
+      #studentList {
+        width: 300px;
+        margin: 50px auto;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+      }
+      .student {
+        border-bottom: 2px solid #e0e7ee;
+        padding: 12px;
+        text-align: left;
+        transition: background-color 0.3s ease;
+      }
+      .student:last-child {
+        border-bottom: none;
+      }
+      .student:hover {
+        background-color: #e0e7ee;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="studentList">
+      <!-- Students will be inserted here -->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

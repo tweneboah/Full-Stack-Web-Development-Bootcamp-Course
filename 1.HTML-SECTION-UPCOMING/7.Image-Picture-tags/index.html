@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image and Picture Tags</title>
+  </head>
+  <body>
+    <!-- Using img tag (downloaded img) -->
+    <img width="250" height="250" src="images/flower.jpg" alt="flower image" />
+    <!-- Using img tag (from url) -->
+    <img
+      width="250"
+      height="250"
+      src="https://images.pexels.com/photos/15545361/pexels-photo-15545361/free-photo-of-photo-of-a-pomegranate-fruit.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+      alt="apple image"
+    />
+    <img
+      width="250"
+      height="250"
+      src="https://images.pexels.com/photos/19065036/pexels-photo-19065036/free-photo-of-anis.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+      alt="apple image"
+    />
+
+    <!-- Using the picture -->
+    <picture>
+      <source
+        media="(min-width:600px)"
+        srcset="
+          https://images.pexels.com/photos/14541415/pexels-photo-14541415.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load
+        "
+      />
+      <img
+        width="250"
+        height="250"
+        src="https://images.pexels.com/photos/14541415/pexels-photo-14541415.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+        alt="apple image"
+      />
+    </picture>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <h1>Job Application Form</h1>
+    <form>
+      <!-- Text input for name -->
+      <div>
+        <label for="fullname">Full Name:</label>
+        <input
+          type="text"
+          placeholder="eg: John Doe"
+          required
+          name="fullname"
+          id="fullname"
+        />
+      </div>
+      <br />
+      <!-- Text input for email -->
+      <div>
+        <label for="">Email:</label>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          required
+          name="email"
+          id="email"
+        />
+      </div>
+      <br />
+      <!-- Text input for age -->
+      <div>
+        <label for="">Age:</label>
+        <input
+          type="number"
+          placeholder="Enter your age"
+          required
+          name="age"
+          id="age"
+        />
+      </div>
+      <br />
+      <!-- Radi Buttons for gender -->
+      <div>
+        <label for="">gender:</label>
+        <input type="radio" required name="gender" id="gender" value="male" />
+        <label for="">Male:</label>
+
+        <input type="radio" required name="female" id="female" value="female" />
+        <label for="">Female:</label>
+      </div>
+      <br />
+      <!-- Checkboxes for skills -->
+      <label for="">Skills</label>
+      <input type="checkbox" id="skill1" name="skills" value="Javascript" />
+      <label for="">Javascript</label>
+      <input type="checkbox" id="skill2" name="skills" value="NodeJS" />
+      <label for="">Node Js</label>
+      <input type="checkbox" id="skill3" name="skills" value="HTML" />
+      <label for="">HTML</label>
+      <!-- Dropdown for position -->
+      <div>
+        <label for="">Position</label>
+        <select name="position" id="position">
+          <option value="frontend">Frontend Developer</option>
+          <option value="backend">Backend Developer</option>
+          <option value="fullstack">Fullstack Developer</option>
+        </select>
+      </div>
+      <!-- Textarea for cover letter -->
+      <label for="">Cover Letter:</label>
+      <textarea name="coverLetter" id="cover" cols="30" rows="10"></textarea>
+      <!-- Upload resume -->
+      <label for="Upload Resume"></label>
+      <input type="file" id="resume" name="resume" />
+      <!-- Button to submit -->
+      <button type="submit">Submit the form</button>
+    </form>
+  </body>
+</html>

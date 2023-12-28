@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ClassList Methods Example</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #eaf0f6;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      #container {
+        width: 350px;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      }
+      p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 2px solid #d1d1d1;
+        border-radius: 8px;
+      }
+      button {
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+        cursor: pointer;
+        background-color: #4caf50; /* Green */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .highlight {
+        background-color: #ffff99;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .italic {
+        font-style: italic;
+      }
+      .red-text {
+        color: #f44336;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p id="textElement">Modify my class!</p>
+      <button onclick="addClass()">Add Class</button>
+      <button onclick="removeClass()">Remove Class</button>
+      <button onclick="toggleClass()">Toggle Class</button>
+      <button onclick="replaceClass()">Replace Class</button>
+      <button onclick="checkContains()">Contains Class</button>
+      <button onclick="listItem()">List Item</button>
+      <button onclick="getValue()">Get Value</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

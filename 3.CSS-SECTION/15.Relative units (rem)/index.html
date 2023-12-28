@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>CSS rem Units Example</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>rem Based Sizing</h1>
+      <p>
+        This is a paragraph. Its font-size and the container's padding are based
+        on the root element's font-size.
+      </p>
+      <p>
+        Change the font-size in the html selector to see how the sizes update.
+      </p>
+      <!-- This paragraph will display the current root font size -->
+    </div>
+    <p id="fontSizeInfo" class="font-size-display"></p>
+
+    <script>
+      function changeRootFontSize(newSize) {
+        //change the root fontsize
+        document.documentElement.style.fontSize = newSize + "px";
+        //update the text content
+        document.getElementById("fontSizeInfo").textContent =
+          "Root font-size changed to: " + newSize + "px";
+
+        console.log(newSize);
+      }
+      changeRootFontSize(30);
+    </script>
+  </body>
+</html>

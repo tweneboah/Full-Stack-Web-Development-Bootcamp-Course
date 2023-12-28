@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Flow Example</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f0f0f0;
+        display: grid;
+        place-items: center;
+        margin: 0;
+        min-height: 100vh;
+      }
+      #parentDiv {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      }
+      #list {
+        list-style: none;
+        padding: 0;
+        margin: 20px; /* Added margin around the list */
+        border: 2px solid #4caf50; /* Optional: Added border for more emphasis */
+        border-radius: 8px; /* Optional: Added border-radius to match #parentDiv */
+      }
+      li {
+        background-color: #4caf50;
+        color: white;
+        margin: 5px;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+      li:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parentDiv">
+      <ul id="list">
+        <li id="item1">Item 1</li>
+        <li id="item2">Item 2</li>
+      </ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

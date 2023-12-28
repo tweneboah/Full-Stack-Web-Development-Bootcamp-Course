@@ -1,0 +1,19 @@
+/* base container style */
+.container {
+  background-color: lightblue;
+  width: 900px;
+  height: 500px;
+}
+
+.child {
+  height: 50px;
+  margin: 10px 0;
+  background-color: peachpuff;
+}
+
+.child-50 {
+  width: 50%;
+}
+.child-30 {
+  width: 30%;
+}

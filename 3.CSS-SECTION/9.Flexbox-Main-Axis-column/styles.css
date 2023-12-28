@@ -1,0 +1,22 @@
+/* Flexbox */
+.container {
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: LightSkyBlue;
+  text-align: center;
+  font-size: 24px;
+  margin: 5px;
+}
+
+/* Different colors for demonstration */
+.item:nth-child(odd) {
+  background-color: LightSalmon;
+}
+.item:nth-child(even) {
+  background-color: PaleGreen;
+}

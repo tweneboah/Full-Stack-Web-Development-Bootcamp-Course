@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Traditional Event Handlers</title>
+  </head>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      display: block;
+      margin: 10px 0;
+      padding: 10px 20px;
+      background-color: #e8491d;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    div {
+      margin: 10px 0;
+      padding: 30px;
+      background-color: #ddd;
+      text-align: center;
+    }
+    div:hover {
+      background-color: #ccc;
+    }
+
+    input[type="text"] {
+      margin: 10px 0;
+      padding: 10px;
+      width: calc(100% - 22px);
+      box-sizing: border-box;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      width: 300px;
+      margin: auto;
+      box-shadow: 0px 0px 10px #aaa;
+    }
+
+    form button[type="submit"] {
+      width: 100%;
+    }
+  </style>
+  <body>
+    <!-- Mouse Events -->
+    <button id="clickButton">Click Me</button>
+    <button id="doubleClickButton">Double Click Me</button>
+    <div id="hoverDiv">Hover over me!</div>
+
+    <!-- Keyboard Events -->
+    <input type="text" id="keyInput" />
+
+    <!-- Form Events -->
+    <form id="myForm">
+      <input type="text" id="formInput" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>

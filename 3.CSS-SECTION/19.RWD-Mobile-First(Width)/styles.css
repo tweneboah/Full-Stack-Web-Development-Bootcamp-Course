@@ -1,0 +1,53 @@
+/* Default styles for mobile */
+* {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  background-color: yellow;
+  height: 100vh;
+}
+p {
+  color: white;
+  font-size: 2rem;
+}
+/* Larger phones */
+@media (min-width: 375px) {
+  .header {
+    background-color: blue;
+  }
+  p {
+    color: yellow;
+    font-size: 5rem;
+  }
+}
+/* Tables */
+@media (min-width: 768px) {
+  .header {
+    background-color: green;
+  }
+  p {
+    color: orangered;
+    font-size: 8rem;
+  }
+}
+/* Small  Desktops */
+@media (min-width: 1280px) {
+  .header {
+    background-color: purple;
+  }
+  p {
+    color: rgb(255, 0, 204);
+    font-size: 10rem;
+  }
+}
+/* Large Desktops */
+@media (min-width: 1440px) {
+  .header {
+    background-color: rgb(255, 0, 0);
+  }
+  p {
+    color: orangered;
+    font-size: 12rem;
+  }
+}

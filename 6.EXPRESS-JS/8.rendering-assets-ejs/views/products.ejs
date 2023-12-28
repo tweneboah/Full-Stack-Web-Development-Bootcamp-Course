@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJS Loops</title>
+  </head>
+  <body>
+    <h1>Loops in EJS</h1>
+    <ul>
+      <% products.forEach((product)=>{ %>
+      <li><%=product.name%></li>
+      - $ <%=product.price%> <%}) %>
+    </ul>
+  </body>
+</html>

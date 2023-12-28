@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.fixed-navbar {
+  /* Fixed properties here */
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.fixed-navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.fixed-navbar a:hover {
+  background-color: #555;
+}
+
+.content-section {
+  padding: 100px 20px; /* Increased padding to avoid content hiding behind the navbar */
+  min-height: 100vh; /* Ensuring each section takes full viewport height */
+  text-align: center; /* Centering content */
+}
+
+.content-section h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.content-section p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.content-section img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.content-section form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.content-section label,
+.content-section input,
+.content-section textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.content-section button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.content-section button:hover {
+  background-color: #555;
+}

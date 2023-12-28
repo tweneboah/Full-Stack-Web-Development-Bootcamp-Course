@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="flex-container">
+      <h1>My Portfolio</h1>
+      <nav>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- About Me -->
+    <section id="about" class="flex-container about-me">
+      <img
+        src="https://cdn.pixabay.com/photo/2014/04/03/10/32/user-310807_1280.png"
+        alt="Your Photo"
+      />
+      <p>Hello! I am a Web Developer.</p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="flex-container skills">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="flex-container projects">
+      <div class="project">
+        <img
+          src="https://cdn.pixabay.com/photo/2015/09/04/23/28/wordpress-923188_640.jpg"
+          alt="Project 2"
+        />
+        <div class="project-info">
+          <div class="project-title">Blog Platform</div>
+          <p>A custom CMS built for bloggers using Python and Django.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img
+          src="https://cdn.pixabay.com/photo/2015/06/25/17/21/smart-watch-821557_1280.jpg"
+          alt="Project 3"
+        />
+        <div class="project-info">
+          <div class="project-title">Weather App</div>
+          <p>
+            An application that provides real-time weather updates using
+            OpenWeather API.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="flex-container contact">
+      <h2>Contact Me</h2>
+      <p>Email: example@email.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="flex-container">
+      <p>Follow me on social media</p>
+    </footer>
+  </body>
+</html>

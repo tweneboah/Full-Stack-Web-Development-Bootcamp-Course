@@ -1,0 +1,19 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+#sidebar {
+  background-color: red;
+  color: white;
+  float: left;
+  height: 100vh;
+  width: 200px;
+  margin: 10px;
+}
+#main-content {
+  background-color: yellow;
+  float: left;
+  height: 100vh;
+  /* calculate the remaining width */
+  width: calc(100% - 220px);
+}

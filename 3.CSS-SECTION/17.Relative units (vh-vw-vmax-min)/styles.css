@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+/* A div that is 50% of the viewport's width and 20% of the viewport's height */
+
+.viewport-width {
+  background-color: coral;
+  width: 50vw;
+  height: 20vh;
+  padding: 1vw;
+  margin-bottom: 1vh;
+  text-align: center;
+  line-height: 2vh;
+}
+
+/* A div that also uses viewport width for width but height for padding, creating a contrasting effect */
+
+.viewport-height {
+  width: 50vw;
+  height: 20vh;
+  background-color: lightgreen;
+  padding: 1vh;
+  margin-bottom: 1vh;
+  color: white;
+  line-height: 20vh;
+}
+/* A div that uses the smaller of the viewport's dimensions to set width and height */
+
+.viewport-min {
+  width: 50vmin;
+  background-color: red;
+  height: 20vmin;
+  color: white;
+  text-align: center;
+  line-height: 16vmin;
+  margin-bottom: 2vmin;
+}
+/* A div that uses the larger of the viewport's dimensions to set width and height */
+
+.viewport-max {
+  width: 50vmax;
+  height: 20vmax;
+  background-color: tomato;
+  padding: 2vmax;
+  color: white;
+  line-height: 16vmax;
+  margin-bottom: 2vmax;
+}

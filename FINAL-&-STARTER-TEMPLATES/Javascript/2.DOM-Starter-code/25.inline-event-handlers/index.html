@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inline Event Handlers</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      button {
+        display: block;
+        margin: 10px 0;
+        padding: 10px 20px;
+        background-color: #e8491d;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #333;
+      }
+
+      div {
+        margin: 10px 0;
+        padding: 30px;
+        background-color: #ddd;
+        text-align: center;
+      }
+
+      div:hover {
+        background-color: #ccc;
+      }
+
+      input[type="text"] {
+        margin: 10px 0;
+        padding: 10px;
+        width: calc(100% - 22px);
+        box-sizing: border-box;
+      }
+
+      form {
+        background: #fff;
+        padding: 20px;
+        width: 300px;
+        margin: auto;
+        box-shadow: 0px 0px 10px #aaa;
+      }
+
+      form button[type="submit"] {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Mouse Events -->
+    <button onclick="clickHandler()">Click Me</button>
+    <button ondblclick="dbClickHandler()">Double Click Me</button>
+    <div onmouseover="onMouseOverHandler()" onmouseout="onMouseOutHandler()">
+      Hover over me!
+    </div>
+
+    <!-- Keyboard Events -->
+    <input
+      onkeydown="onkeydownHandler()"
+      onkeyup="onkeyupHandler()"
+      onkeypress="onkeypressHandler()"
+      type="text"
+      placeholder="Enter something"
+    />
+
+    <!-- Form Events -->
+    <form onsubmit="onsubmitHandler()">
+      <input onfocus="onfocusHandler()" onblur="onblurHandler()" type="text" />
+      <button type="submit">Submit</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>

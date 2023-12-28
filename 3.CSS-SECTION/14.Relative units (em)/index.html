@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>CSS em Units Example</title>
+  </head>
+  <body>
+    <div class="fixed-size-container">
+      <p>
+        This text is inside a container with a fixed font size. The border,
+        margin, and padding of this container are all set in em units, relative
+        to the container's font size.
+      </p>
+    </div>
+
+    <div class="relative-size-container">
+      <p>
+        This text is inside a container with a font size relative to the body.
+        Everything inside scales based on the container's font size, including
+        the border, margin, and padding.
+      </p>
+    </div>
+
+    <p>
+      This paragraph is not inside a special container, so its size is relative
+      to the body's font size.
+    </p>
+  </body>
+</html>

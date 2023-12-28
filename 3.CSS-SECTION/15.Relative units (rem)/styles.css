@@ -1,0 +1,20 @@
+/* Define the base font-size for the document */
+html {
+  font-size: 20px;
+}
+/* Style for a container to apply padding and margin with rem units */
+.container {
+  background-color: lightgray;
+  padding: 2rem;
+  margin: 1rem;
+  border: 0.12rem solid black;
+}
+
+h1 {
+  font-size: 2rem;
+  color: darkgreen;
+}
+
+p {
+  font-size: 1rem;
+}

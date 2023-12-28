@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Registration Form</title>
+  </head>
+  <body>
+    <form id="userForm">
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" />
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" />
+
+      <!-- Multiple input fields with the same name attribute for language proficiency -->
+      <label>Language Proficiency:</label>
+      <input type="radio" name="languageProficiency" value="Beginner" />
+      Beginner
+      <input type="radio" name="languageProficiency" value="Intermediate" />
+      Intermediate
+      <input type="radio" name="languageProficiency" value="Advanced" />
+      Advanced
+    </form>
+
+    <button onclick="collectData()">Submit</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>

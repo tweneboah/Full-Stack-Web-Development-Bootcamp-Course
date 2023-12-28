@@ -1,0 +1,28 @@
+/* set the base font for the document */
+html {
+  font-size: 16px;
+}
+/* Apply a different font-size to the body to see how em units respond */
+body {
+  font-size: 1.2em;
+}
+
+/* fixed-size-container */
+.fixed-size-container {
+  font-size: 20px;
+  color: red;
+  padding: 1em;
+  border: 0.1em solid blue;
+  margin-bottom: 1em;
+}
+/* relative-size-container */
+.relative-size-container {
+  font-size: 0.8em;
+  border: 0.1em solid green;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+p {
+  font-size: 1.1em;
+}

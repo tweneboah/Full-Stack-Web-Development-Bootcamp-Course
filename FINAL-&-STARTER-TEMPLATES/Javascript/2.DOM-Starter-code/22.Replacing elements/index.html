@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Article Replacement</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      #articleContainer {
+        width: 400px;
+        margin: 50px auto;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+      }
+      .article {
+        border: 2px solid #e0e7ee;
+        padding: 20px;
+        margin: 10px 0;
+        background-color: #eef2f7;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .article:hover {
+        background-color: #dde4ea;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+      }
+      .article:first-child {
+        background-color: #d1e7fd;
+      }
+      .article:nth-child(2) {
+        background-color: #fdd1d1;
+      }
+      .article:nth-child(3) {
+        background-color: #d7fdd1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="articleContainer">
+      <div class="article" id="article1">This is Article 1.</div>
+      <div class="article" id="article2">This is Article 2.</div>
+      <div class="article" id="article3">This is Article 3.</div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

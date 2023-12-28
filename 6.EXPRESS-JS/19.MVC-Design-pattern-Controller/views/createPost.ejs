@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a New Post</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h1 class="text-center">Create a New Post</h1>
+          <p class="text-center">
+            Fill out the form below to create a new post.
+          </p>
+
+          <form action="/create" method="POST" class="mt-4">
+            <div class="mb-3">
+              <label for="title" class="form-label">Title:</label>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="content" class="form-label">Content:</label>
+              <textarea
+                name="content"
+                id="content"
+                rows="4"
+                class="form-control"
+                required
+              ></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="author" class="form-label">Author:</label>
+              <input
+                type="text"
+                name="author"
+                id="author"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create Post</button>
+          </form>
+
+          <p class="text-center mt-3">
+            <a href="/" class="btn btn-secondary">Go Back to Posts</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

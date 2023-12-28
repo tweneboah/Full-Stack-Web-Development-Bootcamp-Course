@@ -1,0 +1,50 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 24px;
+}
+
+nav {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  text-decoration: none;
+  color: #007bff;
+  margin: 0 15px;
+  font-weight: 500;
+}
+
+main {
+  padding: 20px;
+}
+.donate-button {
+  background-color: #a72890;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+}
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}

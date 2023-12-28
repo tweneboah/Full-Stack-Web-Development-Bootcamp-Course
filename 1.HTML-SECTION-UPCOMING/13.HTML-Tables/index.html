@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Tables</title>
+    <style>
+      th,
+      td {
+        border: 1px solid gray;
+        padding: 8px;
+      }
+      th {
+        background-color: #871212;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Stuent Grades</h1>
+    <!-- Table -->
+    <table style="width: 100%">
+      <!-- caption -->
+      <caption>
+        Grades for semester 1
+      </caption>
+      <!-- Table head -->
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Math</th>
+          <th>Science</th>
+          <th>History</th>
+        </tr>
+      </thead>
+      <!-- Table body -->
+      <tbody>
+        <!-- First student -->
+        <tr style="text-align: center">
+          <td>Alice</td>
+          <td>85</td>
+          <td>92</td>
+          <td>78</td>
+        </tr>
+        <!-- second student -->
+        <tr style="text-align: center">
+          <td>Thomas</td>
+          <td>88</td>
+          <td>93</td>
+          <td>98</td>
+        </tr>
+        <!-- Third student -->
+        <tr style="text-align: center">
+          <td>Agnes</td>
+          <td>81</td>
+          <td>91</td>
+          <td>91</td>
+        </tr>
+      </tbody>
+      <!-- Footer -->
+      <tfoot>
+        <tr>
+          <td>Average grades will be calculated at the end of the semester</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Fixed Navigation Bar</title>
+  </head>
+  <body>
+    <nav class="fixed-navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <section id="home" class="content-section">
+      <h1>Welcome to Our Website</h1>
+      <p>Explore our site and learn more about what we do.</p>
+      <img
+        src="https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_1280.jpg"
+        alt="Home Image"
+      />
+    </section>
+    <section id="about" class="content-section">
+      <h1>About Us</h1>
+      <p>
+        We are a dedicated team passionate about our work. Learn more about our
+        mission, vision, and values.
+      </p>
+      <img
+        src="https://cdn.pixabay.com/photo/2017/11/19/13/03/panorama-2962730_1280.jpg"
+        alt="About Image"
+      />
+    </section>
+    <section id="contact" class="content-section">
+      <h1>Contact Us</h1>
+      <p>Have questions? Reach out to us through the contact form below.</p>
+      <form action="/submit" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>

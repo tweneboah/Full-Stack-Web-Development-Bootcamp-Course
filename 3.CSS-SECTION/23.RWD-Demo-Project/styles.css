@@ -1,0 +1,45 @@
+/* reset the default styling */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.gallery-item {
+  flex: 1;
+  min-width: 33.33%;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* New property */
+  width: 100%; /* Set width */
+  height: 100%; /* And height */
+}
+
+/* Media Query for Tablets */
+@media screen and(max-width:768px) {
+  .gallery-item {
+    min-width: 50%;
+  }
+}
+
+/* Media Query for pgone */
+@media screen and(max-width:500px) {
+  .gallery-item {
+    min-width: 100%;
+  }
+}
