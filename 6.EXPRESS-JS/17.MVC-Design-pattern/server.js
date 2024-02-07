@@ -1,7 +1,18 @@
 const express = require("express");
-const postRouter = require("./routes/blogRoutes");
-require("./utils/dbConnect"); //Db Connect
+const mongoose = require("mongoose");
+const postRouter = require("./router/postRouter");
 const app = express();
+
+//-----Connect DB------
+
+mongoose
+  .connect("mongodb://localhost:27017/mvc-design-pattern")
+  .then(() => {
+    console.log("DB has been connected");
+  })
+  .catch((e) => {
+    console.log(e);
+  });
 
 const PORT = 3000;
 //!Configure ejs
@@ -9,7 +20,12 @@ app.set("view engine", "ejs");
 //!Middlewares
 app.use(express.urlencoded({ extended: true }));
 
-//App routes
+//!. Show Homepage
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+//!---Router----
 app.use("/", postRouter);
 
 //Start the server

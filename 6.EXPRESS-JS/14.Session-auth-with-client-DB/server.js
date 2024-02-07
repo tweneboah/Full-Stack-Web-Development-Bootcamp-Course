@@ -1,7 +1,8 @@
 const express = require("express");
-const session = require("express-session");
 const mongoose = require("mongoose");
+const session = require("express-session");
 const MongoStore = require("connect-mongo");
+
 const bcrypt = require("bcryptjs");
 const app = express();
 
@@ -34,41 +35,40 @@ app.set("view engine", "ejs");
 //-----CUSTOM MIDDLEWARES-----
 //!--isAuthenticated (Authentication)
 const isAuthenticated = (req, res, next) => {
-  //Check the user in the session
+  //check user in the session
   const username = req.session.userData ? req.session.userData.username : null;
-  try {
-    if (username) {
-      return next();
-    } else {
-      res.send("You are not login");
-    }
-  } catch (error) {
-    console.log(error);
-  }
-};
-//!-isAdmin (Authorization)
-const isAdmin = (req, res, next) => {
-  if (req.session.userData && req.session.userData.role === "admin") {
+  if (username) {
     return next();
   } else {
-    res.send("Fobidden: You do not have access, admin only");
+    res.redirect("/login");
   }
 };
 
+//!-isAdmin (Authorization)
+const isAdmin = (req, res, next) => {
+  //check user in the session
+  const admin = req?.session?.userData?.role === "admin";
+  if (admin) {
+    return next();
+  } else {
+    res.send("Fobidden, access denied");
+  }
+};
 //!--configure Express Session---
 app.use(
   session({
-    secret: "my-key",
+    secret: "gsls039434",
     resave: false,
     saveUninitialized: true,
     cookie: {
-      maxAge: 60 * 60 * 1000, //Expires in one hr
+      maxAge: 60 * 60 * 100, //Expires in 1hr
     },
     store: MongoStore.create({
       mongoUrl: "mongodb://localhost:27017/userAuthDB",
     }),
   })
 );
+
 //Home Route
 app.get("/", (req, res) => {
   console.log(req.session);
@@ -80,9 +80,7 @@ app.get("/login", (req, res) => {
 });
 
 //Admin Route (Admin page)
-app.get("/admin-only", isAuthenticated, isAdmin, (req, res) => {
-  //we have access to the login as req.userData
-  // console.log(req.userData);
+app.get("/admin-only", (req, res) => {
   res.render("admin");
 });
 //Register Route (register form)
@@ -111,12 +109,14 @@ app.post("/login", async (req, res) => {
     username,
   });
   if (userFound && (await bcrypt.compare(password, userFound.password))) {
-    //! Create session
-    //! Add the login user ton session
+    //! Create session (save the user into session)
+    console.log(userFound);
     req.session.userData = {
       username: userFound.username,
       role: userFound.role,
     };
+
+    //! Add the login user ton session
     res.redirect("/dashboard");
   } else {
     res.send("Invalid login credentials");
@@ -124,26 +124,19 @@ app.post("/login", async (req, res) => {
 });
 
 //Dashboard Route
-app.get("/dashboard", (req, res) => {
+app.get("/dashboard", isAuthenticated, isAdmin, (req, res) => {
+  console.log(req.session);
   //Take the login user from session
-
   const username = req.session.userData ? req.session.userData.username : null;
-  //! Render the template
-  if (username) {
-    res.render("dashboard", { username });
-  } else {
-    //!Redirect to login
-    res.redirect("/login");
-  }
+  res.render("dashboard", { username });
 });
 
 //Logout Route
 app.get("/logout", (req, res) => {
-  //!Logout
+  //!logout
   req.session.destroy();
-  //redirect
   res.redirect("/login");
 });
 
 //start the server
-app.listen(3001, console.log("The server is running"));
+app.listen(3000, console.log("The server is running"));
