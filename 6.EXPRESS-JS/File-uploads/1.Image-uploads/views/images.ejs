@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Uploaded Images</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        padding-top: 20px;
+        background-color: #f8f9fa;
+      }
+      .image-container {
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+        height: auto;
+      }
+      img {
+        height: auto;
+        width: 100%;
+        border-radius: 5px;
+        min-height: 500px;
+      }
+      .image-info {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h2 class="mb-4 text-center">Uploaded Images</h2>
+      <div class="row">
+        <% if(files.length > 0) { %> <% files.forEach(file => { %>
+        <div class="col-md-4">
+          <div class="image-container">
+            <img
+              src="<%= file.url %>"
+              alt="Uploaded Image"
+              style="object-fit: cover"
+            />
+            <!-- Adjust object-fit if necessary -->
+            <p class="image-info">
+              Uploaded on: <%= file.createdAt.toDateString() %>
+            </p>
+          </div>
+        </div>
+        <% }) %> <% } else { %>
+        <p class="text-center">No images found.</p>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome to Cloud Video Hub</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f0f2f5;
+        color: #333;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        overflow: hidden;
+        padding: 0 20px;
+      }
+      header {
+        background: #333;
+        color: #fff;
+        padding-top: 30px;
+        min-height: 70px;
+        border-bottom: #0779e4 3px solid;
+      }
+      header h1 {
+        text-align: center;
+        margin: 0;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 15px;
+        margin: 0 5px;
+      }
+      nav a:hover {
+        background: #0779e4;
+      }
+      .banner {
+        background: url("https://cdn.pixabay.com/photo/2023/11/13/03/07/pond-8384421_1280.jpg")
+          no-repeat center center/cover;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .banner h1 {
+        font-size: 2.5em;
+      }
+      .content-section {
+        margin-bottom: 40px;
+      }
+      .content-section h2,
+      .content-section p {
+        text-align: center;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+        text-align: center;
+      }
+      .feature-box {
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .feature-box h4 {
+        margin-top: 0;
+      }
+      .how-it-works {
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Cloud Video Hub</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/upload-form">Upload Video</a>
+        <a href="/media">Video Gallery</a>
+      </nav>
+    </header>
+    <div class="banner">
+      <h1>Store, Share, and Stream Your Videos</h1>
+    </div>
+    <div class="container">
+      <section class="content-section">
+        <h2>About Cloud Video Hub</h2>
+        <p>
+          Cloud Video Hub is your ultimate cloud storage solution for videos.
+          Seamlessly upload, store, and share your video content with the world.
+        </p>
+      </section>
+      <section class="content-section features">
+        <div class="feature-box">
+          <h4>Easy Uploads</h4>
+          <p>
+            Upload your videos with just a few clicks. Our platform supports
+            multiple video formats.
+          </p>
+        </div>
+        <div class="feature-box">
+          <h4>Secure Storage</h4>
+          <p>
+            Your videos are stored securely in the cloud, ensuring they are safe
+            and accessible from anywhere.
+          </p>
+        </div>
+        <div class="feature-box">
+          <h4>Share and Stream</h4>
+          <p>
+            Easily share your videos with others or stream them directly from
+            the cloud.
+          </p>
+        </div>
+      </section>
+      <section class="content-section how-it-works">
+        <h2>How It Works</h2>
+        <p>1. Sign up for an account and log in.</p>
+        <p>2. Upload your videos to your personal cloud storage.</p>
+        <p>3. Share your videos with friends or stream them online anytime.</p>
+      </section>
+    </div>
+    <footer>
+      <p>&copy; 2024 Cloud Video Hub. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

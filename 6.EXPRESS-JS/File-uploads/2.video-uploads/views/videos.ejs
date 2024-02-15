@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Uploaded Media</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h2 {
+        color: #333;
+        font-weight: 300;
+      }
+      .videos-grid {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fill,
+          minmax(500px, 1fr)
+        ); /* Increase min width for larger videos */
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 20px;
+      }
+      .video-container {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #fff; /* Ensure a background for the video */
+      }
+      video {
+        width: 100%; /* Full width of the container */
+        height: auto; /* Adjust height automatically to maintain aspect ratio */
+        max-height: 600px; /* Optional: Set a max height if needed */
+      }
+      p {
+        padding: 10px;
+        margin: 0;
+        color: #333;
+        font-size: 16px;
+        text-align: center;
+      }
+      .no-videos {
+        color: #666;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Uploaded Videos</h2>
+    <div class="videos-grid">
+      <% if(files.length > 0) { %> <% files.forEach(file => { %> <%
+      if(file.url.endsWith('.mp4')) { %>
+      <div class="video-container">
+        <video controls>
+          <source src="<%= file.url %>" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p>Uploaded on: <%= file.createdAt.toDateString() %></p>
+      </div>
+      <% } %> <% }) %> <% } else { %>
+      <div class="no-videos">No videos found.</div>
+      <% } %>
+    </div>
+  </body>
+</html>

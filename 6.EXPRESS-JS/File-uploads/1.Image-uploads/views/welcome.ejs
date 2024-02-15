@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CloudMedia Upload</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="container-fluid bg-primary text-white p-5">
+      <div class="container">
+        <h1 class="display-4">Welcome to CloudMedia Upload!</h1>
+        <p class="lead">
+          The easiest way to upload and manage your media files in the cloud.
+        </p>
+      </div>
+    </header>
+
+    <section class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Simple and Fast Uploads</h2>
+          <p>
+            Upload your images and videos with just a few clicks. Our platform
+            automatically optimizes your media for the web.
+          </p>
+          <h2>Cloud Storage</h2>
+          <p>
+            Your files are securely stored in the cloud, accessible anytime and
+            anywhere.
+          </p>
+          <h2>Real-Time Access</h2>
+          <p>
+            View your uploaded media immediately on our platform. Share and
+            manage your files effortlessly.
+          </p>
+
+          <a href="/images" class="btn btn-info mt-3"
+            >View All Uploaded Images</a
+          >
+        </div>
+        <div class="col-md-6">
+          <form
+            action="/upload"
+            method="post"
+            enctype="multipart/form-data"
+            class="upload-form"
+          >
+            <div class="form-group">
+              <label for="file">Choose file to upload</label>
+              <input
+                type="file"
+                class="form-control-file"
+                id="file"
+                name="file"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Upload File</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container-fluid bg-primary text-white text-center p-3 mt-5">
+      <p>CloudMedia Upload © 2024. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

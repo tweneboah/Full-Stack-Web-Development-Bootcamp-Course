@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Upload Media</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        width: 100%;
+        max-width: 400px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #333;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .form-control {
+        background-color: #eff0f1;
+        border: none;
+        padding: 12px 15px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 5px;
+        color: #333;
+      }
+      .form-control:hover,
+      .form-control:focus {
+        background-color: #e1e2e2;
+      }
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Upload Image or Video</h2>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input
+          type="file"
+          name="file"
+          accept="video/*"
+          required
+          class="form-control"
+        />
+        <button type="submit" class="btn">Upload</button>
+      </form>
+    </div>
+  </body>
+</html>
