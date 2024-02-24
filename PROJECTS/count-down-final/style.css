@@ -1,0 +1,149 @@
+/* General page settings */
+body {
+  background: linear-gradient(to right, #ff5f6d, #ffc371);
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+}
+.input-group,
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  margin-right: 10px;
+  align-self: center;
+}
+
+.input-group input {
+  flex-grow: 1;
+  max-width: 250px;
+}
+
+.button-group button {
+  flex: 1 1 auto;
+  min-width: 120px;
+}
+/* Container styling */
+.countdown-container {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the date-time picker */
+input[type="datetime-local"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff477e;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #ff2f5a;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+#timer-display {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+#timer-display span {
+  font-size: 4rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  animation: fadeIn 2s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#timer-display span::after {
+  content: attr(data-label);
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Animation effects */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .countdown-container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #timer-display span {
+    font-size: 2rem;
+  }
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+}

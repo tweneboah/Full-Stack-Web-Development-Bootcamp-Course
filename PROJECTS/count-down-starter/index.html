@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="countdown-container">
+      <h1>Countdown Timer</h1>
+
+      <div class="input-group">
+        <label for="target-date">Select Date and Time:</label>
+        <input type="datetime-local" id="target-date" />
+      </div>
+
+      <div class="button-group">
+        <button id="start-countdown">Start Countdown</button>
+        <button id="pause-countdown" disabled>Pause Countdown</button>
+        <button id="cancel-countdown" disabled>Cancel Countdown</button>
+        <button id="resume-countdown" disabled>Resume Countdown</button>
+      </div>
+
+      <div id="timer-display">
+        <span id="days" data-label="Days">00</span>
+        <span id="hours" data-label="Hours">00</span>
+        <span id="minutes" data-label="Minutes">00</span>
+        <span id="seconds" data-label="Seconds">00</span>
+      </div>
+    </div>
+    <footer>Developed by MasyncTech Coding School</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
