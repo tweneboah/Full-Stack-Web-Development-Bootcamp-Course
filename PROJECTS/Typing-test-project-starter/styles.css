@@ -1,0 +1,104 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #282a36; /* Dark background for contrast */
+  color: #f8f8f2; /* Light text for readability */
+}
+
+#game-container {
+  padding: 40px;
+  border-radius: 15px;
+  background: #44475a; /* Slightly lighter background for the container */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+}
+
+h1 {
+  color: #ff79c6; /* Pink color for headings to stand out */
+  margin-bottom: 20px;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+#text-to-type {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #6272a4; /* Contrast background for text area */
+  font-size: 1.2rem;
+  animation: fadeIn 1s ease-out forwards; /* Animation for text appearance */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#typing-input {
+  width: calc(100% - 24px);
+  padding: 12px;
+  border: 2px solid #ff79c6; /* Border color matching the heading */
+  border-radius: 8px;
+  background-color: #282a36; /* Same as body background for depth */
+  color: #f8f8f2; /* Matching the text color */
+  font-size: 1rem;
+  transition: border-color 0.3s; /* Smooth transition for focus */
+}
+
+#typing-input:focus {
+  outline: none;
+  border-color: #50fa7b; /* Bright green for active state */
+}
+
+#feedback p {
+  font-size: 1rem;
+  color: #8be9fd; /* Light blue for clear feedback */
+}
+
+.correct {
+  color: #50fa7b; /* Green for correct */
+}
+
+.incorrect {
+  color: #ff5555; /* Red for incorrect */
+  text-decoration: line-through;
+}
+
+#message-area {
+  font-weight: bold;
+  min-height: 22px;
+  color: #ffb86c; /* Orange for messages, ensuring visibility */
+  margin-top: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #text-to-type,
+  #typing-input {
+    font-size: 1rem;
+  }
+}
