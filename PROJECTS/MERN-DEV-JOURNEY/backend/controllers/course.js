@@ -62,6 +62,47 @@ const courseCtrl = {
       });
     res.json(course);
   }),
+  // ! Update course
+  update: asyncHandler(async (req, res) => {
+    const course = await Course.findByIdAndUpdate(
+      req.params.courseId,
+      req.body,
+      { new: true }
+    );
+    if (course) {
+      res.json(course);
+    } else {
+      res.status(404);
+      throw new Error("Course not found");
+    }
+  }),
+  // ! Delete course
+  delete: asyncHandler(async (req, res) => {
+    //! Find the course
+    const courseFound = await Course.findById(req.params.courseId);
+    console.log(courseFound);
+    //! Prevent deletion if a course a student
+    if (courseFound && courseFound.students.length < 0) {
+      res.status(400);
+      res.json({ message: "Course has studuents, cannot delete" });
+      return; //Stop execution
+    }
+    //!Proceed to delete
+    const course = await Course.findByIdAndDelete(req.params.courseId);
+    if (course) {
+      //* Remove from the user's course created
+      await User.updateMany(
+        { coursesCreated: req.params.courseId },
+        {
+          $pull: { coursesCreated: req.params.courseId },
+        }
+      );
+      //!Send the response
+      res.json(course);
+    } else {
+      res.json({ message: "Course not found" });
+    }
+  }),
 };
 
 module.exports = courseCtrl;
