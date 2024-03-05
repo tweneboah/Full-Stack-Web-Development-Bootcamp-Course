@@ -1,0 +1,81 @@
+/* GenerateImage.css */
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.input-prompt {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.generate-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #005f73;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.generate-btn:hover {
+  background-color: #0a9396;
+}
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Continue with the rest of your styles */
+
+.generate-btn:disabled {
+  background-color: #94d2bd;
+  cursor: not-allowed;
+}
+
+.image-container {
+  margin-top: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  line-height: 0; /* Eliminate space below image */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Add responsiveness for smaller devices */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .input-prompt {
+    font-size: 0.9rem;
+  }
+
+  .generate-btn {
+    font-size: 0.9rem;
+  }
+}

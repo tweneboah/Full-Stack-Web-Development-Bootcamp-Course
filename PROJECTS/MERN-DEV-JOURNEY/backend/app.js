@@ -5,6 +5,7 @@ const usersRouter = require("./routes/usersRouter");
 const errorHandler = require("./middlewares/errorHandlerMiddleware");
 const courseRouter = require("./routes/courseRouter");
 const courseSectionRouter = require("./routes/courseSection");
+const progressRouter = require("./routes/progressRouter");
 const app = express();
 const PORT = process.env.PORT || 5000;
 //connect to mongodb
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use("/", usersRouter);
 app.use("/", courseRouter);
 app.use("/", courseSectionRouter);
+app.use("/", progressRouter);
 
 //! Error hadler middleware
 app.use(errorHandler);

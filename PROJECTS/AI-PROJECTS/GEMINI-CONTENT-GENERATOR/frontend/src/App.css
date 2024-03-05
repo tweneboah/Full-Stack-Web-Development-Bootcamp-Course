@@ -1,0 +1,81 @@
+/* Reset some default styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* App layout */
+.App {
+  text-align: center;
+  padding: 2rem;
+  color: #333;
+}
+
+.App-header {
+  background-color: #f8f9fa;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  border-bottom: 2px solid #eee;
+}
+
+.App-header h1 {
+  color: #007bff;
+  font-size: 2.5rem;
+}
+
+.App-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.App-form {
+  max-width: 480px;
+  margin: 0 auto 2rem;
+}
+
+.App-label {
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.App-input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.App-button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+.App-button:hover {
+  background-color: #0056b3;
+}
+
+.App-response {
+  font-size: 1rem;
+  color: #444;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 0.25rem;
+}
+
+/* Utilize this space for any additional global styles you might need */
