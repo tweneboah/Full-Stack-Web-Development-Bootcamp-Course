@@ -31,7 +31,7 @@ const gallerySchema = new mongoose.Schema(
 const Gallery = mongoose.model("Gallery", gallerySchema);
 //!Configure openai
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: "",
 });
 //!Configure cloudinary
 config({
