@@ -30,7 +30,9 @@ const gallerySchema = new mongoose.Schema(
 );
 const Gallery = mongoose.model("Gallery", gallerySchema);
 //!Configure openai
-const openai = new OpenAI({ apiKey: process.env.OPENAI_KEY });
+const openai = new OpenAI({
+  apiKey: "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",
+});
 //!Configure cloudinary
 config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
