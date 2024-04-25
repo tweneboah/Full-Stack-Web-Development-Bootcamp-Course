@@ -58,8 +58,14 @@ export const deleteCategoryAPI = async (id) => {
   return response.data;
 };
 //! lists
-export const listTransactionsAPI = async () => {
+export const listTransactionsAPI = async ({
+  category,
+  type,
+  startDate,
+  endDate,
+}) => {
   const response = await axios.get(`${BASE_URL}/transactions/lists`, {
+    params: { category, endDate, startDate, type },
     headers: {
       Authorization: `Bearer ${token}`,
     },

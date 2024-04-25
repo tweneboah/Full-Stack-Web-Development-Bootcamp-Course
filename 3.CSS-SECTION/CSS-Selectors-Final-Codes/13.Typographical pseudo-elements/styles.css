@@ -1,0 +1,44 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: #fafafa;
+  margin: 0;
+}
+
+#container {
+  width: 100%;
+}
+
+.headline {
+  font-size: 2.5em;
+  text-align: center;
+  background-color: #f1e5d6;
+  padding: 10px;
+}
+
+.side-content {
+  float: right;
+  width: 30%;
+  background-color: #d4ccc5;
+  padding: 10px;
+}
+
+#coffee-article {
+  width: 68%;
+  padding: 1%;
+}
+
+/* Typographyical pseudo elements */
+.headline::first-letter {
+  color: #8b4513;
+  font-size: 4em;
+}
+.intro::first-letter {
+  font-weight: bold;
+  background-color: #e6e6e6;
+  padding: 5px;
+  font-size: 3em;
+}
+
+.content::first-line {
+  background-color: yellow;
+}

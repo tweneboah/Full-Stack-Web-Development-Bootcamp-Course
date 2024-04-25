@@ -88,7 +88,9 @@ const usersController = {
     const hashedPassword = await bcrypt.hash(newPassword, salt);
     user.password = hashedPassword;
     //! ReSave
-    await user.save();
+    await user.save({
+      validateBeforeSave: false,
+    });
     //!Send the response
     res.json({ message: "Password Changed successfully" });
   }),

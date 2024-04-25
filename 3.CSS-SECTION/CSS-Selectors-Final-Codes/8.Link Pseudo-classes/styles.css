@@ -1,0 +1,50 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #fdfefe;
+}
+
+#blog {
+  width: 80%;
+  margin: auto;
+  padding: 30px;
+  background-color: #f8f9f9;
+  border-radius: 15px;
+  box-shadow: 0px 0px 12px #d5d8dc;
+}
+
+.related-articles {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.related-articles h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.related-articles ul {
+  list-style: none;
+}
+
+.related-articles li {
+  margin-bottom: 8px;
+}
+/* Login begins */
+.related-articles a:link {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.related-articles a:visited {
+  color: #7d3c98;
+}
+.related-articles a:hover {
+  color: #f39c12;
+  border-bottom: 2px solid #f39c12;
+}
+
+.related-articles a:active {
+  color: red;
+}

@@ -1,0 +1,48 @@
+#header{
+    background-color: #2e86c1;
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+#name{
+    font-size: 2.5em;
+}
+
+#about{
+    background-color: #f7dc6f;
+    padding: 20px;
+    margin: 15px;
+}
+
+#about-title{
+color: #515a5a;
+font-size: 2em;
+}
+
+#about-description{
+    color: #424949;
+    font-size: 1.2em;
+}
+
+#projects{
+    background-color: #d5f5e3;
+    padding: 20px;
+    margin: 15px;
+}
+
+#project1, #project2{
+    color: #27ae60;
+    font-size: 1.2em;
+    margin-left: 15px;
+}
+
+#footer{
+    background-color: #aab7b8;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+#contact{
+    font-size: 1.2em;
+}

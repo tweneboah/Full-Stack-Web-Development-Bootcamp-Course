@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+#recipe-container {
+  width: 80%;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+.title {
+  font-size: 2em;
+  color: #8b4513;
+}
+p,
+ul,
+ol {
+  font-size: 1me;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Custom styling using ::selection */
+::selection {
+  background-color: #ffebb5;
+  color: #8b4513;
+}
+
+::-moz-selection {
+  background-color: #ffebb5;
+  color: #8b4513;
+}
+
+::-webkit-selection {
+  background-color: #ffebb5;
+  color: #8b4513;
+}

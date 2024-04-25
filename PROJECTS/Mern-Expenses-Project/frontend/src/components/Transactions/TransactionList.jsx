@@ -7,6 +7,19 @@ import { listTransactionsAPI } from "../../services/transactions/transactionServ
 import { listCategoriesAPI } from "../../services/category/categoryService";
 
 const TransactionList = () => {
+  //!Filtering state
+  const [filters, setFilters] = useState({
+    startDate: "",
+    endDate: "",
+    type: "",
+    category: "",
+  });
+  //!Handle Filter Change
+  const handleFilterChange = (e) => {
+    const { name, value } = e.target;
+    setFilters((prev) => ({ ...prev, [name]: value }));
+  };
+
   //fetching
   const {
     data: categoriesData,
@@ -25,8 +38,8 @@ const TransactionList = () => {
     error,
     refetch,
   } = useQuery({
-    queryFn: listTransactionsAPI,
-    queryKey: ["list-transactions"],
+    queryFn: () => listTransactionsAPI(filters),
+    queryKey: ["list-transactions", filters],
   });
 
   return (
@@ -36,10 +49,14 @@ const TransactionList = () => {
         <input
           type="date"
           name="startDate"
+          value={filters.startDate}
+          onChange={handleFilterChange}
           className="p-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
         />
         {/* End Date */}
         <input
+          value={filters.endDate}
+          onChange={handleFilterChange}
           type="date"
           name="endDate"
           className="p-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
@@ -48,6 +65,8 @@ const TransactionList = () => {
         <div className="relative">
           <select
             name="type"
+            value={filters.type}
+            onChange={handleFilterChange}
             className="w-full p-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 appearance-none"
           >
             <option value="">All Types</option>
@@ -59,9 +78,13 @@ const TransactionList = () => {
         {/* Category */}
         <div className="relative">
           <select
+            value={filters.category}
+            onChange={handleFilterChange}
             name="category"
             className="w-full p-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 appearance-none"
           >
+            <option value="All">All Categories</option>
+            <option value="Uncategorized">Uncategorized</option>
             {categoriesData?.map((category) => {
               return (
                 <option key={category?._id} value={category?.name}>
