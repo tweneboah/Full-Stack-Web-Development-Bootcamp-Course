@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Grid - Rows and 12 Columns</title>
+    <!-- Include Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Bootstrap Grid & Breakpoints</h1>
+    <div class="container-fluid">
+      <div class="row bg-success p-2">
+        <!-- column 1 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="p-3 border bg-primary text-white">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-4 bg-danger">Nested 1</div>
+              <div class="col-12 col-sm-6 col-md-4 bg-warning">Nested 2</div>
+            </div>
+          </div>
+        </div>
+        <!-- column 2 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="p-3 border bg-danger text-white">C2</div>
+        </div>
+        <!-- column 3 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="p-3 border bg-warning text-white">C3</div>
+        </div>
+        <!-- column 4 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="p-3 border bg-info text-white">C4</div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
