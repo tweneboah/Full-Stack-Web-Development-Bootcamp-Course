@@ -6,9 +6,10 @@ const User = require("../model/User");
 const userCtrl = {
   //!Register
   register: asyncHandler(async (req, res) => {
+    console.log(req.body);
     const { username, email, password } = req.body;
     //!Validations
-    if (!username || !email || !password) {
+    if (!username | !email || !password) {
       throw new Error("Please all fields are required");
     }
     //! check if user already exists
@@ -21,12 +22,12 @@ const userCtrl = {
     const hashedPassword = await bcrypt.hash(password, salt);
     //!Create the user
     const userCreated = await User.create({
-      username,
       password: hashedPassword,
       email,
+      username,
     });
     //!Send the response
-
+    console.log(userCreated);
     res.json({
       username: userCreated.username,
       email: userCreated.email,
@@ -38,6 +39,7 @@ const userCtrl = {
     const { email, password } = req.body;
     //!Check if user email exists
     const user = await User.findOne({ email });
+    console.log("user backend", user);
     if (!user) {
       throw new Error("Invalid credentials");
     }
