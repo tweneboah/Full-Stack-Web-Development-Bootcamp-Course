@@ -1,0 +1,47 @@
+/* src/components/PostDetail.css */
+
+.post-detail {
+  text-align: left;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-detail h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.post-image1 {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.post-meta {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.post-meta span {
+  margin-right: 10px;
+}
+
+.post-not-found {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #d9534f;
+}

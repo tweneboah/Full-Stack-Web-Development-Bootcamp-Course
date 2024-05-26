@@ -65,39 +65,36 @@ const Student = mongoose.model("Student", studentSchema);
 // createCourses();
 
 //!Register Student
-// const createStudents = async () => {
-//   try {
-//     //create students
-//     const students = await Student.create([
-//       {
-//         name: "Alice",
-//       },
-//       {
-//         name: "Emma",
-//       },
-//     ]);
-//     console.log(students);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+
+const createStudents = async () => {
+  try {
+    //Create student
+    const students = await Student.create([
+      { name: "Alice" },
+      { name: "Emma" },
+    ]);
+
+    console.log(students);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // createStudents();
 //!Student Applying to courses
-
 const applyToCourse = async () => {
   try {
     //1.Find the student
-    const foundStudent = await Student.findById("653649f3014a9854768501ab");
+    const foundStudent = await Student.findById("6651bc9cd2b86616829bd69a");
+    //2. Find the course
+    const courseFound = await Course.findById("66519b1faee508746a1e9783");
 
-    //2.Find the course
-    const courseFound = await Course.findById("6536499b779cbbdb58eebec4");
-
-    //3.Apply to the course (1.update the student enrolledCourses 2.update the enrolledStudents on course)
-    //4.Push the course found into the student's enrolledSCourse field
+    //3. Apply to the course (1.update the student enrolledCourses 2.update the enrolledStudents on course)
+    //4.Push the course found into the student's enrolledCourse field
     foundStudent.enrolledCourse.push(courseFound._id);
-    //4.Push the student found into the courses's enrolledStudents field
+    //4. Push the student found into the courses's enrolledStudents field
     courseFound.enrolledStudents.push(foundStudent._id);
-    //5.Resave the student & course docs
+    //5. Resave the student and course docs
     await foundStudent.save();
     await courseFound.save();
     console.log(foundStudent);
@@ -107,6 +104,5 @@ const applyToCourse = async () => {
   }
 };
 applyToCourse();
-
 //Start the server
 app.listen(PORT, console.log(`Server is up and running on port ${PORT}`));
