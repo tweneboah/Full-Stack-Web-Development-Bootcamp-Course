@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="card-header">
+              <h1>Counter App</h1>
+            </div>
+            <div class="card-body">
+              <p>
+                This is a simple counter application. Use the buttons to
+                increase, decrease, or reset the counter value.
+              </p>
+              <div class="display-4 mb-4" id="counter-value">0</div>
+              <button id="increase-btn" class="btn btn-success btn-lg mx-2">
+                Increase
+              </button>
+              <button id="decrease-btn" class="btn btn-danger btn-lg mx-2">
+                Decrease
+              </button>
+              <button id="reset-btn" class="btn btn-secondary btn-lg mx-2">
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

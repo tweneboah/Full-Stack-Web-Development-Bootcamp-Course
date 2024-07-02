@@ -1,0 +1,107 @@
+<%- include('partials/header', { title: post.title, user: user }) %>
+
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h1 class="card-title"><%= post.title %></h1>
+          <p class="card-text text-muted">
+            by <%= post.author.username %> on <%= post.createdAt.toDateString()
+            %>
+          </p>
+          <p class="card-text"><%= post.content %></p>
+
+          <h2 class="mt-4">Images</h2>
+          <div class="row">
+            <% post.images.forEach(image => { %>
+            <div class="col-md-6 mb-3">
+              <img src="<%= image.url %>" alt="Post Image" class="img-fluid" />
+            </div>
+            <% }) %>
+          </div>
+
+          <% if (user && user._id.toString() === post.author._id.toString()) {
+          %>
+          <!-- Only show to the author -->
+          <a href="/posts/<%= post._id %>/edit" class="btn btn-primary">
+            <i class="fas fa-edit"></i> Edit Post
+          </a>
+          <form
+            action="/posts/<%= post._id %>?_method=DELETE"
+            method="POST"
+            class="d-inline"
+          >
+            <button type="submit" class="btn btn-danger">
+              <i class="fas fa-trash-alt"></i> Delete Post
+            </button>
+          </form>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Comments</h2>
+          <% if (post.comments.length > 0) { %>
+          <ul class="list-group list-group-flush">
+            <% post.comments.forEach(comment => { %>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <strong><%= comment.author.username %></strong>: <%=
+                comment.content %>
+              </div>
+              <% if (user && user._id.toString() ===
+              comment.author._id.toString()) { %>
+              <!-- Only show to the author -->
+              <div class="btn-group">
+                <a
+                  href="/comments/<%= comment._id %>/edit"
+                  class="btn btn-sm btn-secondary"
+                >
+                  <i class="fas fa-edit"></i> Edit
+                </a>
+                <form
+                  action="/comments/<%= comment._id %>?_method=DELETE"
+                  method="POST"
+                  class="d-inline"
+                >
+                  <button type="submit" class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash-alt"></i> Delete
+                  </button>
+                </form>
+              </div>
+              <% } %>
+            </li>
+            <% }) %>
+          </ul>
+          <% } else { %>
+          <p>No comments yet.</p>
+          <% } %> <% if (user) { %>
+          <form
+            action="/posts/<%= post._id %>/comments"
+            method="POST"
+            class="mt-3"
+          >
+            <div class="form-group">
+              <textarea
+                name="content"
+                rows="4"
+                class="form-control"
+                placeholder="Add a comment..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Comment</button>
+          </form>
+          <% } else { %>
+          <p><a href="/auth/login">Login</a> to add a comment.</p>
+          <% } %>
+        </div>
+      </div>
+      <%- include('partials/footer') %>
+    </div>
+  </div>
+</div>

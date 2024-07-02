@@ -1,0 +1,71 @@
+<%- include('partials/header', { title: 'Profile', user: user }) %>
+
+<div class="container mt-5 vh-100">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card mb-4">
+        <div class="card-body text-center">
+          <% if (user.profilePicture && user.profilePicture.url) { %>
+          <img
+            src="<%= user.profilePicture.url %>"
+            class="rounded-circle mb-3"
+            style="width: 150px; height: 150px"
+            alt="Profile Picture"
+          />
+          <% } else { %>
+          <img
+            src="https://cdn.pixabay.com/photo/2015/12/13/20/43/doll-1091702_1280.jpg"
+            class="rounded-circle mb-3"
+            style="width: 150px; height: 150px"
+            alt="Default Profile Picture"
+          />
+          <% } %>
+          <h4 class="card-title"><%= user.username %></h4>
+          <p class="card-text"><strong>Email:</strong> <%= user.email %></p>
+          <p class="card-text"><strong>Bio:</strong> <%= user.bio %></p>
+          <p class="card-text">
+            <strong>Date Joined:</strong> <%= user.createdAt.toDateString() %>
+          </p>
+          <p class="card-text">
+            <strong>Number of Posts:</strong> <%= postCount %>
+          </p>
+          <a href="/user/edit" class="btn btn-primary btn-block"
+            >Edit Profile</a
+          >
+          <form action="/user/delete" method="POST" class="mt-3">
+            <button type="submit" class="btn btn-danger btn-block">
+              Delete Account
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <h2 class="mb-4">Your Posts</h2>
+  </div>
+  <div class="row">
+    <% if (posts.length > 0) { %> <% posts.forEach(post => { %>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <% if (post.images && post.images.length > 0) { %>
+        <img
+          src="<%= post.images[0].url %>"
+          class="card-img-top"
+          alt="Post Image"
+        />
+        <% } %>
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text"><%= post.createdAt.toDateString() %></p>
+          <a href="/posts/<%= post._id %>" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+    <% }) %> <% } else { %>
+    <div class="col-12">
+      <p>You have not created any posts yet.</p>
+    </div>
+    <% } %>
+  </div>
+</div>

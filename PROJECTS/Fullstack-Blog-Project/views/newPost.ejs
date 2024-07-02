@@ -1,0 +1,76 @@
+<%- include('partials/header', { title: 'Add Post', user: user }) %>
+
+<div class="container mt-5 mb-5">
+  <div class="card shadow-sm mb-5">
+    <div class="card-header bg-primary text-white">
+      <h2 class="mb-0">Add New Post</h2>
+    </div>
+    <div class="card-body">
+      <p class="lead">
+        Share your latest thoughts and updates by creating a new post. You can
+        add images to make your post more engaging.
+      </p>
+      <% if (error) { %>
+      <div class="alert alert-danger" role="alert"><%= error %></div>
+      <% } %> <% if (success) { %>
+      <div class="alert alert-success" role="alert"><%= success %></div>
+      <% } %>
+      <form action="/posts/add" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" name="title" id="title" />
+        </div>
+        <div class="mb-3">
+          <label for="content" class="form-label">Content</label>
+          <textarea
+            class="form-control"
+            name="content"
+            id="content"
+            rows="5"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="images" class="form-label">Images</label>
+          <input
+            class="form-control"
+            type="file"
+            name="images"
+            id="images"
+            multiple
+            onchange="previewImages()"
+          />
+          <div class="mt-3" id="image-preview"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-plus-circle"></i> Add Post
+        </button>
+      </form>
+    </div>
+  </div>
+  <script>
+    function previewImages() {
+      const preview = document.getElementById("image-preview");
+      preview.innerHTML = "";
+      const files = document.getElementById("images").files;
+      for (let i = 0; i < files.length; i++) {
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(files[i]);
+        img.classList.add("img-thumbnail", "mr-2", "mb-2");
+        img.style.maxWidth = "150px";
+        preview.appendChild(img);
+      }
+    }
+
+    //form validation
+    function validationForm() {
+      const title = document.getElementById("title").value;
+      const content = document.getElementById("content").value;
+      if (!title || !content) {
+        alert("Please fill in all fields");
+        return false;
+      }
+      return true;
+    }
+  </script>
+  <%- include('partials/footer') %>
+</div>

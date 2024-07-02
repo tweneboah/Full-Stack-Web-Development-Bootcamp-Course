@@ -1,0 +1,126 @@
+<%- include('partials/header', { title: 'Home', user: user }) %>
+
+<!-- Hero Section -->
+<div
+  class="hero-section text-center d-flex align-items-center justify-content-center vh-100 text-white"
+  style="
+    background-image: url('https://cdn.pixabay.com/photo/2019/06/01/02/14/lake-4243352_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  "
+>
+  <div
+    style="
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    "
+  ></div>
+  <div class="container" style="position: relative">
+    <h1 class="display-3 font-weight-bold mb-4">Welcome to Masync Blog</h1>
+    <p class="lead mb-4">A place to share your thoughts and ideas</p>
+    <% if (user) { %>
+    <p class="mb-4">
+      Hello,
+      <span class="username font-weight-bold"><%= user.username %></span>!
+      Welcome back!
+    </p>
+    <a class="btn btn-primary btn-lg mr-2" href="/user/profile"
+      ><i class="fas fa-user"></i> Go to your profile</a
+    >
+    <% } else { %>
+    <p class="mb-4">
+      Please
+      <a class="btn btn-primary btn-lg mr-2" href="/auth/login"
+        ><i class="fas fa-sign-in-alt"></i> Login</a
+      >
+      or
+      <a class="btn btn-warning btn-lg" href="/auth/register"
+        ><i class="fas fa-user-plus"></i> Register</a
+      >
+      to continue.
+    </p>
+    <% } %>
+  </div>
+</div>
+
+<!-- Features Section -->
+<div class="container-fluid mt-5">
+  <h1 class="text-center font-weight-bold mb-4">Application Features</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <i class="fas fa-lock fa-3x mb-3" style="color: #ff6f61"></i>
+          <h3 class="card-title">Authentication</h3>
+          <p class="card-text">
+            Securely access your account with our robust authentication system.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <i class="fas fa-user-shield fa-3x mb-3" style="color: #6a4c93"></i>
+          <h3 class="card-title">Authorization</h3>
+          <p class="card-text">
+            Control who has access to different parts of the site.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <i class="fas fa-sign-in-alt fa-3x mb-3" style="color: #ffa600"></i>
+          <h3 class="card-title">Login</h3>
+          <p class="card-text">
+            Quick and easy login process for returning users.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <i class="fas fa-sign-out-alt fa-3x mb-3" style="color: #ff6f61"></i>
+          <h3 class="card-title">Logout</h3>
+          <p class="card-text">
+            Securely log out of your account to protect your data.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <i class="fas fa-comments fa-3x mb-3" style="color: #6a4c93"></i>
+          <h3 class="card-title">Comments</h3>
+          <p class="card-text">
+            Engage with the community by leaving comments on posts.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <i class="fas fa-upload fa-3x mb-3" style="color: #ffa600"></i>
+          <h3 class="card-title">Multiple File Uploads</h3>
+          <p class="card-text">
+            Easily upload multiple files with our intuitive interface.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
