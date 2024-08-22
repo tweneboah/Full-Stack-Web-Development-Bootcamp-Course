@@ -49,7 +49,6 @@ exports.createPost = asyncHandler(async (req, res) => {
     images,
   });
   await newPost.save();
-  //push post to user
 
   res.render("newPost", {
     title: "Create Post",

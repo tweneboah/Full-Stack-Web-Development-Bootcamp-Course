@@ -1,0 +1,108 @@
+<%- include('partials/header', { title: 'Edit Profile', user: user }) %>
+
+<div class="container mt-5">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h2 class="mb-0">Edit Profile</h2>
+    </div>
+    <div class="card-body">
+      <form
+        action="/user/edit"
+        method="POST"
+        enctype="multipart/form-data"
+        onsubmit="return validateForm()"
+      >
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            id="username"
+            value="<%= user.username %>"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            value="<%= user.email %>"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="bio" class="form-label">Bio</label>
+          <textarea class="form-control" name="bio" id="bio" rows="3">
+<%= user.bio %></textarea
+          >
+        </div>
+        <div class="mb-3">
+          <label for="profilePicture" class="form-label">Profile Picture</label>
+          <input
+            class="form-control"
+            type="file"
+            name="profilePicture"
+            id="profilePicture"
+            onchange="previewImage()"
+          />
+          <div class="mt-3">
+            <% if (user.profilePicture && user.profilePicture.url) { %>
+            <img
+              src="<%= user.profilePicture.url %>"
+              alt="Profile Picture"
+              class="img-thumbnail"
+              id="currentProfilePicture"
+              style="max-width: 150px"
+            />
+            <% } %>
+            <img
+              id="image-preview"
+              class="img-thumbnail mt-2"
+              style="max-width: 150px; display: none"
+            />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-save"></i> Update Profile
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function previewImage() {
+    const preview = document.getElementById("image-preview");
+    const file = document.getElementById("profilePicture").files[0];
+    const currentImage = document.getElementById("currentProfilePicture");
+
+    if (file) {
+      preview.src = URL.createObjectURL(file);
+      preview.style.display = "block";
+      if (currentImage) {
+        currentImage.style.display = "none";
+      }
+    } else {
+      preview.style.display = "none";
+      if (currentImage) {
+        currentImage.style.display = "block";
+      }
+    }
+  }
+
+  function validateForm() {
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    if (!username || !email) {
+      alert("Username and Email are required.");
+      return false;
+    }
+    return true;
+  }
+</script>
+
+<%- include('partials/footer') %>

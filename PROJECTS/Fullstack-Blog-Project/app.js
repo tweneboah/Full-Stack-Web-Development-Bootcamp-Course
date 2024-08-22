@@ -7,12 +7,12 @@ const MongoStore = require("connect-mongo");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const User = require("./models/User");
-const userRoutes = require("./routes/userRoutes");
 const passportConfig = require("./config/passport");
 const postRoutes = require("./routes/postRoutes");
 const errorHandler = require("./middlewares/errorHandler");
 const commentRoutes = require("./routes/commentRoutes");
 const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 //port
 const PORT = process.env.PORT || 3000;
