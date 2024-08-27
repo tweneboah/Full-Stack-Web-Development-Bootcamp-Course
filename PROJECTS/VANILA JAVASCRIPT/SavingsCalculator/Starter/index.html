@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GrowthSaver: Eco-Friendly Savings Calculator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-column">
+        <div class="eco-icon">🌱</div>
+        <h1>GrowthSaver</h1>
+        <p class="description">
+          Nurture your financial future with our eco-friendly savings
+          calculator. Watch your money grow like a thriving garden!
+        </p>
+        <svg
+          class="savings-tree"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M50 10 L90 90 H10 Z" fill="#4CAF50" />
+          <circle cx="50" cy="50" r="10" fill="#81C784" />
+          <rect x="45" y="90" width="10" height="20" fill="#3E2723" />
+        </svg>
+      </div>
+      <div class="right-column">
+        <div class="input-group">
+          <label for="goal-amount">Savings Goal Amount ($)</label>
+          <input
+            type="number"
+            id="goal-amount"
+            placeholder="Enter your savings goal"
+            required
+          />
+          <i data-feather="target" class="input-icon"></i>
+        </div>
+        <div class="input-group">
+          <label for="current-savings">Current Savings ($)</label>
+          <input
+            type="number"
+            id="current-savings"
+            placeholder="Enter your current savings"
+            required
+          />
+          <i data-feather="dollar-sign" class="input-icon"></i>
+        </div>
+        <div class="input-group">
+          <label for="monthly-contribution">Monthly Contribution ($)</label>
+          <input
+            type="number"
+            id="monthly-contribution"
+            placeholder="Enter your monthly contribution"
+            required
+          />
+          <i data-feather="trending-up" class="input-icon"></i>
+        </div>
+        <button id="calculate-btn">
+          <i data-feather="refresh-cw"></i>
+          Grow Your Savings
+        </button>
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="result" id="result"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

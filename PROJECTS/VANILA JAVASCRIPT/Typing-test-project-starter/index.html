@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <h1>Typing Game</h1>
+      <p id="text-to-type">Here will be the text the user needs to type...</p>
+      <input type="text" id="typing-input" placeholder="Start typing here..." />
+      <div id="feedback">
+        <p>Speed: <span id="speed">0</span> WPM</p>
+        <p>Accuracy: <span id="accuracy">100</span>%</p>
+      </div>
+      <!-- Add this below the #feedback div -->
+      <div id="message-area"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
