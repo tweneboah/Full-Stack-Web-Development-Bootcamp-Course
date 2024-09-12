@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8;
+  color: #2d3748;
+}
+
+header {
+  background-color: #6b46c1;
+  color: white;
+  padding: 15px;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+header nav a:hover {
+  color: #fbd38d;
+}
+
+.hero {
+  background: linear-gradient(13deg, #667eea 0%, #764ba2 100%);
+  min-height: 70vh;
+  padding: 100px 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero h2 {
+  font-size: 55px;
+  color: white;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 24px;
+  color: white;
+}
+
+.cta-button {
+  background-color: #fbd38d;
+  padding: 15px 30px;
+  border: none;
+  color: black;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+}
+
+.features,
+.testimonials,
+.pricing {
+  padding: 80px 20px;
+}
+
+.features,
+.pricing {
+  background-color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #4a5568;
+}
+
+.section-title .testimonials {
+  color: white;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -10px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.card {
+  background-color: #f7eded;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials .card {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: black;
+}
+
+.card-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #6b46c1;
+}
+
+.cta {
+  background: linear-gradient(13deg, #667eea 0%, #764ba2 100%);
+  text-align: center;
+  color: white;
+  padding: 80px 20px;
+}
+
+footer {
+  background-color: #2d3748;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: rgba(224, 224, 110);
+  text-decoration: none;
+}
