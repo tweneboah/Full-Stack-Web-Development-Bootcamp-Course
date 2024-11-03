@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content-section {
+  margin-bottom: 50px;
+}
+
+.content {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.sticky-header {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+}
