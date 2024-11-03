@@ -1,0 +1,22 @@
+body {
+  background-color: #f0f0f0;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+  color: blue;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+p {
+  line-height: 1.6;
+  color: red;
+}
+a {
+  background-color: blue;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
