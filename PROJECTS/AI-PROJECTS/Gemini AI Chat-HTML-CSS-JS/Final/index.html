@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini AI Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>💬 Gemini AI Chat</h1>
+        <p class="subtitle">Chat with Google's advanced AI model</p>
+      </header>
+
+      <div class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+          <div class="message">
+            <div class="avatar">AI</div>
+            <div class="message-content">
+              Hello! I'm Gemini AI. How can I help you today?
+            </div>
+          </div>
+        </div>
+
+        <div class="input-container">
+          <form class="input-form" id="chatForm">
+            <textarea
+              id="userInput"
+              placeholder="Type your message here..."
+              rows="1"
+              required
+            ></textarea>
+            <button type="submit" id="sendButton">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
