@@ -36,7 +36,32 @@ const userProfileSchema = new mongoose.Schema({
 
 //!3. Create the model
 //? Compiling the schema
-const User = mongoose.model("User", userProfileSchema); //users
+const Student = mongoose.model("Student", studentsSchema);
+//=====CREATE OPERATION======
+//! ----.save()--------
+const newUser = new User({
+  username: "masynctech",
+  age: 26,
+  birthday: new Date("2001-04-15"),
+  isActive: true,
+  hobbies: ["Soccer", "Reading", "Coding"],
+  address: {
+    street: "789 0ak St",
+    city: "Kumasi",
+    postaclCode: 5551,
+  },
+  customdata: {
+    country: "Ghana",
+  },
+});
+
+//! Save the doc
+newUser
+  .save()
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => console.log(error));
 
 //Start the server
 app.listen(PORT, console.log(`Server is up and running on port ${PORT}`));
